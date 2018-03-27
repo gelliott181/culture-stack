@@ -1,0 +1,22 @@
+{
+  "name": "culture-stack",
+  "version": "1.0.0",
+  "description": "npm culture",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjdaurora/culture-stack.git"
+  },
+  "author": "JJ D'Aurora and the good people at CWRU Coding Bootcamp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjdaurora/culture-stack/issues"
+  },
+  "homepage": "https://github.com/jjdaurora/culture-stack#readme",
+  "dependencies": {
+    "semantic-ui": "^2.3.1"
+  }
+}
