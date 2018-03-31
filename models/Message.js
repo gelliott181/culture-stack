@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const CommentSchema = new Schema({
+const MessageSchema = new Schema({
   body:{
     type: String,
     author: {
@@ -9,28 +9,28 @@ const CommentSchema = new Schema({
       ref:"User"
     }
   },
-  score:{
+  parent:{
     type: Schema.Types.ObjectId,
-    ref: "User"
+    ref: "Comment"
   }
 },{
   timestamps: true
 });
 
-const Comment = mongoose.model("Comment", CommentSchema);
+const Message = mongoose.model("Message", MessageSchema);
 
-module.exports = Comment;
+module.exports = Message;
+
 
 
 /*
 Date
 Body 
-Score
+Recipients
 
 
-Author References
+Parent References Comments, _id
+Authorr References
 Users, _id
-
-Score Reference Users, _id / score
 
 */
