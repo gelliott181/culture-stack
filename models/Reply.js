@@ -1,21 +1,22 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-var ReplySchema = new mongoose.Schema({
+const ReplySchema = new Schema({
   body : {
     type: String,
     author: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref:"User"
     }
   },
   parent:{
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref:"Comment"
   }
 },{
   timestamps: true
 });
 
-var Reply = mongoose.model("Reply", ReplySchema);
+const Reply = mongoose.model("Reply", ReplySchema);
 
 module.exports = Reply;

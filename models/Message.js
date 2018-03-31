@@ -1,22 +1,23 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-var MessageSchema = new mongoose.Schema({
+const MessageSchema = new Schema({
   body:{
     type: String,
     author: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref:"User"
     }
   },
   parent:{
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "Comment"
   }
 },{
   timestamps: true
 });
 
-var Message = mongoose.model("Message", MessageSchema);
+const Message = mongoose.model("Message", MessageSchema);
 
 module.exports = Message;
 

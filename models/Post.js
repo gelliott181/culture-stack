@@ -1,6 +1,7 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-var PostSchema = new mongoose.Schema({
+const PostSchema = new Schema({
   title: {
     type: String,
     required: [true, "Post title required"]
@@ -25,18 +26,18 @@ var PostSchema = new mongoose.Schema({
     type: String
   },
   author:{
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "User"
   },
   comment: [{
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "Comment"
   }]
 },{
   timestamps: true
 });
 
-var Post = mongoose.model("Post", PostSchema);
+const Post = mongoose.model("Post", PostSchema);
 
 module.exports = Post;
 
