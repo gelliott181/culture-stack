@@ -33,10 +33,10 @@ var UserSchema = new mongoose.Schema({
   description: {
     type: String
   },
-  post: {
+  post: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Post"
-  }
+  }]
 });
 
 var User = mongoose.model("User", UserSchema);
