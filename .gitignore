@@ -64,6 +64,3 @@ typings/
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-# aws-upload.js is not ready yet
-aws-upload.js

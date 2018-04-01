@@ -5,8 +5,6 @@ const express = require("express"),
       AWS = require("aws-sdk"),
       Busboy = require("busboy");
 
-
-
 // Store models in db
 const db = require("./models");
 
@@ -32,6 +30,7 @@ mongoose.connect(MONGODB_URI, {});
 
 //Import API routes
 require("./routes/api.js")(app, db);
+require("./routes/aws-upload")(app, Busboy);
 
 // Send every request to the React app
 // Define any API routes before this runs
