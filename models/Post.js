@@ -6,17 +6,19 @@ const PostSchema = new Schema({
     type: String,
     required: [true, "Post title required"]
   },
-  category: {
-    type: String,
-    default: "Uncategorized"
-  },
-  type:{
+  QA: {
     type: String
   },
-  image:{
+  img_filename:{
     type: String
   },
-  audio:{
+  aperture:{
+    type: String
+  },
+  ISO:{
+    type: String
+  },
+  speed: {
     type: String
   },
   body:{
@@ -40,19 +42,3 @@ const PostSchema = new Schema({
 const Post = mongoose.model("Post", PostSchema);
 
 module.exports = Post;
-
-
-/*
-Title
-Date
-Category
-Type
-Imagey 
-Audio
-Body
-Tags
-
-
-Author References Users, _id
-
-*/

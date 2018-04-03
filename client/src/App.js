@@ -1,6 +1,7 @@
 import axios from 'axios';
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import UploadForm from "./pages/UploadForm";
 
 // import Navbar from './components/Navbar';
 
@@ -9,6 +10,7 @@ import { withUser, update } from './services/withUser';
 // import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import NotFoundPage from './pages/NotFoundPage';
+
 
 class App extends Component {
   componentDidMount() {
@@ -32,13 +34,12 @@ class App extends Component {
     const { user } = this.props;
     return (
       <Router>
-          <Fragment>
-            <Switch>
-              <Route exact path="/" component={LoginPage} />
-              <Route exact path="/login" component={LoginPage} />
-              <Route component={NotFoundPage} />
-            </Switch>
-          </Fragment>
+        <Switch>
+          <Route exact path="/" component={LoginPage} />
+          <Route exact path="/login" component={LoginPage} />
+          <Route exact path="/" component={UploadForm} />
+          <Route component={NotFoundPage} />
+        </Switch>
       </Router>
     );
   }
