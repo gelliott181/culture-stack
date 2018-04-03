@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import UploadForm from "./pages/UploadForm";
+import CreatePost from "./pages/CreatePost";
 
 // import Navbar from './components/Navbar';
 
