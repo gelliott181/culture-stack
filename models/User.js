@@ -27,12 +27,12 @@ const UserSchema = new Schema({
   firstname: {
     type: String
     // ,
-    // require: [true, "first name required" ]
+    require: [true, "first name required" ]
   },
   lastname: {
     type: String
     // ,
-    // require: [true, "last name required" ] 
+    require: [true, "last name required" ] 
   },
   avatar: {
     type: String

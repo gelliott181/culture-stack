@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { update } from '../services/withUser';
+import { update } from '../../services/withUser';
 
 class LoginPage extends Component {
   state = {
@@ -22,7 +22,7 @@ class LoginPage extends Component {
     const { history } = this.props;
 
     // post an auth request
-    axios.post('/auth', {
+    axios.post('/api/auth', {
       username,
       password
     })
@@ -55,22 +55,18 @@ class LoginPage extends Component {
         <div>
           <input
             name="username"
-            hintText="Username"
-            floatingLabelText="Username"
             onChange={this.handleInputChanged}
           />
         </div>
         <div>
           <input
             name="password"
-            hintText="Password"
-            floatingLabelText="Password"
             type="password"
             onChange={this.handleInputChanged}
           />
         </div>
         <div>
-          <button primary type="submit">
+          <button type="submit">
             Log In
           </button>
         </div>

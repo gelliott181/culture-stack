@@ -1,6 +1,6 @@
-
-module.exports = ( db, app, passport) => {
-
+const express = require('express');
+const passport = require('passport');
+const db = require('../models');
 const router = express.Router();
 const mustBeLoggedIn = require('../middleware/mustBeLoggedIn');
 
@@ -14,7 +14,7 @@ function getCurrentUser(req, res) {
   });
 }
 
-router.route('/api/auth')
+router.route('/auth')
   // GET to /api/auth will return current logged in user info
   .get((req, res) => {
     if (!req.user) {
@@ -81,5 +81,7 @@ router.route('/stuff')
       'Battlestar Galactica'
     ]);
   });
-};
+
+
+module.exports = router;
 

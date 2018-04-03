@@ -23,6 +23,8 @@ const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/cultureStack
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI, {});
 
+require('./passport')(app);
+
 // Use Busboy!
 app.use(connectBusboy());
 
@@ -39,7 +41,7 @@ if (process.env.NODE_ENV === "production") {
 //Import API routes
 require("./routes/api.js")(app, db);
 require("./routes/aws-upload")(app, AWS, Busboy, dotenv);
-require("./routes/auth")(db, app, passport);
+app.use(require('./routes'));
 
 // Send every request to the React app
 // Define any API routes before this runs

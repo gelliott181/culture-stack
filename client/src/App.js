@@ -1,16 +1,16 @@
+//Dependencies
 import axios from 'axios';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import UploadForm from "./pages/UploadForm";
-import CreatePost from "./pages/CreatePost";
 
-// import Navbar from './components/Navbar';
+//Pages
+import UploadForm from "./pages/UploadForm";
+// import CreatePost from "./pages/CreatePost";
+import LoginPage from './pages/passportTesting/LoginPage';
+import RegisterUser from './pages/passportTesting/RegisterUser';
+import NotFoundPage from './pages/NotFoundPage';
 
 import { withUser, update } from './services/withUser';
-
-// import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
-import NotFoundPage from './pages/NotFoundPage';
 
 
 class App extends Component {
@@ -32,12 +32,13 @@ class App extends Component {
       });
   }
   render() {
-    const { user } = this.props;
+    // const { user } = this.props;
     return (
       <Router>
         <Switch>
           <Route exact path="/" component={LoginPage} />
           <Route exact path="/login" component={LoginPage} />
+          <Route exact path="/create" component={RegisterUser} />
           <Route exact path="/" component={UploadForm} />
           <Route component={NotFoundPage} />
         </Switch>

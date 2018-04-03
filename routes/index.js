@@ -9,7 +9,7 @@ const router = express.Router();
 // /api in front of each route.
 router.use('/api', require('./auth'));
 
-// // add HTML routes to current router
+// add HTML routes to current router
 // router.use(require('./htmlRoutes'));
 
 module.exports = router;
