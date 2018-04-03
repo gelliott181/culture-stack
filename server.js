@@ -35,9 +35,14 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-//Import API routes
-require("./routes/api.js")(app, db);
-require("./routes/aws-upload")(app, AWS, Busboy, dotenv);
+// require('./passport')(app);
+
+//Import Routes
+require('./routes/aws-upload')(app, AWS, Busboy, dotenv);
+const routes = require('./routes');
+app.use(routes);
+
+
 
 // Send every request to the React app
 // Define any API routes before this runs
