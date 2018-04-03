@@ -4,10 +4,11 @@ const express = require('express'),
       mongoose = require('mongoose'),
       dotenv = require('dotenv'),
       AWS = require('aws-sdk'),
-      Busboy = require('busboy');
+      Busboy = require('busboy'), 
       connectBusboy = require('connect-busboy'),
-      busboyBodyParser = require('busboy-body-parser');
-
+      busboyBodyParser = require('busboy-body-parser'),
+      passport = require('passport');
+      
 // Store models in db
 const db = require("./models");
 
@@ -38,6 +39,7 @@ if (process.env.NODE_ENV === "production") {
 //Import API routes
 require("./routes/api.js")(app, db);
 require("./routes/aws-upload")(app, AWS, Busboy, dotenv);
+require("./routes/auth")(db, app, passport);
 
 // Send every request to the React app
 // Define any API routes before this runs

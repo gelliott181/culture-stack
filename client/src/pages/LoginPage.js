@@ -8,11 +8,13 @@ class LoginPage extends Component {
     username: null,
     password: null
   }
+
   handleInputChanged = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     });
   }
+  
   handleLogin = (event) => {
     event.preventDefault();
 
@@ -20,7 +22,7 @@ class LoginPage extends Component {
     const { history } = this.props;
 
     // post an auth request
-    axios.post('/api/auth', {
+    axios.post('/auth', {
       username,
       password
     })
