@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Radio } from 'semantic-ui-react'
 
-export default class RadioExampleRadioGroup extends Component {
+export default class CreatePost extends Component {
   state = {}
   handleChange = (e, { value }) => this.setState({ value })
 
@@ -57,16 +57,16 @@ export default class RadioExampleRadioGroup extends Component {
                         </div>
                         <div className="ui form">
                             <div className="inline fields">
-                                <label for="fruit">Submission Type</label>
+                                <label htmlFor="fruit">Submission Type</label>
                                 <div className="field">
                                     <div className="ui radio checkbox">
-                                        <input type="radio" name="fruit" checked="" tabindex="0" className="hidden" />
+                                        <input type="radio" name="fruit" checked="" tabIndex="0" className="hidden" />
                                         <label>Question</label>
                                     </div>
                                 </div>
                                 <div className="field">
                                     <div className="ui radio checkbox">
-                                        <input type="radio" name="fruit" tabindex="0" className="hidden" />
+                                        <input type="radio" name="fruit" tabIndex="0" className="hidden" />
                                         <label>Post</label>
                                     </div>
                                 </div>
@@ -93,7 +93,7 @@ export default class RadioExampleRadioGroup extends Component {
                             </select>
                         </div>
                         <div className="ui divider hidden"></div>
-                    <div className="ui button" tabindex="0">Submit Post</div>
+                    <div className="ui button" tabIndex="0">Submit Post</div>
                 </form>
             </div>
         </section>
