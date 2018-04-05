@@ -1,4 +1,4 @@
-module.exports = (app, AWS, Busboy, dotenv) => {
+module.exports = (app, AWS, Busboy, dotenv, db) => {
 
     dotenv.config();
 
@@ -30,38 +30,37 @@ module.exports = (app, AWS, Busboy, dotenv) => {
   // Don't put any headers (content-type)
   // Under body:
   // check form-data
-  // Put the body with "element1": "test", "element2": image file
+  // Put the body with "element1": "test", "img_file": image file
 
   app.post('/api/upload', function (req, res, next) {
 
-    // This grabs the additional parameters so in this case passing in
-    // "element1" with a value.
-    // This grabs the additional parameters so in this case passing     
-    // in "element1" with a value.
-   console.log(req.headers);
-   const element1 = req.body.element1;
-   var busboy = new Busboy({ headers: req.headers });
-   // The file upload has completed
-   busboy.on('finish', function() {
-    console.log('Upload finished');
-    // Your files are stored in req.files. In this case,
-    // you only have one and it's req.files.element2:
-    // This returns:
-    // {
-    //    element2: {
-    //      data: ...contents of the file...,
-    //      name: 'Example.jpg',
-    //      encoding: '7bit',
-    //      mimetype: 'image/png',
-    //      truncated: false,
-    //      size: 959480
-    //    }
-    // }
-    // Grabs your file object from the request.
-    const file = req.files.element2;
-    console.log(file);
-    uploadToS3(file);
-   });
-   req.pipe(busboy);
-  });
+    db.Post.create(req.body)
+        .then(dbModel => {
+            
+            // All data is stored in req.body
+            const post = req.body;
+            console.log(dbModel._id);
+            console.log(post);
+            var busboy = new Busboy({ headers: req.headers });
+            // The file upload has completed
+            busboy.on('finish', function() {
+                console.log('Upload finished');
+                // The files are stored in req.files.
+                const file = req.files.img_file;
+                // Find the file extension of the uploaded photo and then store this value in fileExtension
+                let fileExtension = file.name.substr(file.name.lastIndexOf('.') + 1);
+                // Rename the file to the Post._id with the extension appended.
+                file.name = dbModel._id.toString() + "." + fileExtension;
+                console.log(file);
+                uploadToS3(file);
+                
+            });
+            req.pipe(busboy);
+
+            res.json(dbModel);
+        })
+        .catch(err => res.status(422).json(err));
+
+        
+    });
 }
