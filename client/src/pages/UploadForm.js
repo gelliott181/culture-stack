@@ -43,9 +43,6 @@ class UploadForm extends Component {
                     />
                 </form>
 
-                <div className="imgDisplay">
-                    <img src={`${this.state.img_file}`} alt="preview" />
-                </div>
             </div>
         )
     }
