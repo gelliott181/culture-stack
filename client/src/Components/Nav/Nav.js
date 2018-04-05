@@ -1,35 +1,18 @@
 import React, { Component } from "react";
-import { Input, Menu, Segment } from "semantic-ui-react"
+import { Menu, Input, Image } from 'semantic-ui-react';
 
-const Nav = () => (
-  <nav className="nav-color">
-    <div className="ui stackable inverted pointing menu">
-      <div className="image">
-        <img
-          className="ui tiny image"
-          src={process.env.PUBLIC_URL + "/img/branding.png"} alt="logo"
-        />
-      </div>
-      <h1 className="ui header item nav-h1-letter-spacing">
-        CULTURE STACK
-      </h1>
-      <a className="item">submit a post</a>
-      <div className="right menu">
-        <div className="item">
-          <div className="ui transparent icon input">
-            <input type="text" placeholder="Search..." />
-            <i className="search link icon" />
-          </div>
-        </div>
-        <div className="item">
-          <a href="#" className="item">
-            Sign In
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>
-);
+const styles = {
+  navColor: {
+    background: "#2d2b2d"
+  },
+  zeromp: {
+    margin: 0,
+    padding: 0
+  },
+  letterSpace: {
+    letterSpacing: '12px'
+  }
+};
 
 export default class MenuExamplePointing extends Component {
   state = { activeItem: "home" };
@@ -39,27 +22,19 @@ export default class MenuExamplePointing extends Component {
   render() {
     const { activeItem } = this.state;
 
-    return (
-      <div>
-        <Menu pointing>
-          <img className="ui tiny image" src={process.env.PUBLIC_URL + "/img/branding.png"} alt="logo"/>
-          <Menu.Item
-            name="submit a post"
-            active={activeItem === "submit a post"}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name="friends"
-            active={activeItem === "friends"}
-            onClick={this.handleItemClick}
-          />
+    return <div>
+        <Menu attached="top" inverted style={styles.navColor}>
+          <div>
+            <Image src={"/img/branding.png"} size="tiny" className="ui" />
+          </div>
+          <h1 style={{...styles.zeromp, ...styles.letterSpace}}><Menu.Item name="CULTURE STACK" active={activeItem === "culture stack"} onClick={this.handleItemClick} /></h1>
+          <Menu.Item name="submit a post" active={activeItem === "submit a post"} onClick={this.handleItemClick} />
           <Menu.Menu position="right">
             <Menu.Item>
               <Input icon="search" placeholder="Search..." />
             </Menu.Item>
           </Menu.Menu>
         </Menu>
-      </div>
-    );
+      </div>;
   }
 }
