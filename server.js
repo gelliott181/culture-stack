@@ -38,7 +38,7 @@ if (process.env.NODE_ENV === "production") {
 // require('./passport')(app);
 
 //Import Routes
-require('./routes/aws-upload')(app, AWS, Busboy, dotenv);
+require('./routes/aws-upload')(app, AWS, Busboy, dotenv, db);
 const routes = require('./routes');
 app.use(routes);
 
