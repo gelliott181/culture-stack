@@ -47,7 +47,9 @@ module.exports = (app, AWS, Busboy, dotenv, db) => {
                 console.log('Upload finished');
                 // The files are stored in req.files.
                 const file = req.files.img_file;
+                // Find the file extension of the uploaded photo and then store this value in fileExtension
                 let fileExtension = file.name.substr(file.name.lastIndexOf('.') + 1);
+                // Rename the file to the Post._id with the extension appended.
                 file.name = dbModel._id.toString() + "." + fileExtension;
                 console.log(file);
                 uploadToS3(file);
