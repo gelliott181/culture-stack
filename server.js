@@ -40,7 +40,7 @@ if (process.env.NODE_ENV === "production") {
 
 //Import API routes
 require("./routes/api.js")(app, db);
-require("./routes/aws-upload")(app, AWS, Busboy, dotenv);
+require("./routes/aws-upload")(app, AWS, Busboy, dotenv, db);
 app.use(require('./routes'));
 
 // Send every request to the React app

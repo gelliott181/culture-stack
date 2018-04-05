@@ -4,8 +4,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 //Pages
-import UploadForm from "./pages/UploadForm";
-// import CreatePost from "./pages/CreatePost";
+import CreatePost from "./pages/CreatePost";
 import LoginPage from './pages/passportTesting/LoginPage';
 import RegisterUser from './pages/passportTesting/RegisterUser';
 import NotFoundPage from './pages/NotFoundPage';
@@ -39,7 +38,7 @@ class App extends Component {
           <Route exact path="/" component={LoginPage} />
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/create" component={RegisterUser} />
-          <Route exact path="/" component={UploadForm} />
+          <Route exact path="/upload" component={CreatePost} />
           <Route component={NotFoundPage} />
         </Switch>
       </Router>

@@ -22,17 +22,17 @@ const UserSchema = new Schema({
   },
   password: {
     type: String,
-    require: [true, "password required" ]
+    required: [true, "password required" ]
   },
   firstname: {
     type: String
     // ,
-    require: [true, "first name required" ]
+    // required: [true, "first name required" ]
   },
   lastname: {
     type: String
     // ,
-    require: [true, "last name required" ] 
+    // required: [true, "last name required" ] 
   },
   avatar: {
     type: String
