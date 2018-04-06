@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import UploadForm from "./pages/UploadForm";
 import CreatePost from "./pages/CreatePost";
 import Home from "./pages/Home";
-import Nav from "./Components/Nav/Nav"
+import Nav from "./Components/Nav/Nav";
+import Footer from "./Components/Footer/Footer.js";
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
           </Switch>
         </Router>
+        <Footer/>
       </div>
     );
   }
