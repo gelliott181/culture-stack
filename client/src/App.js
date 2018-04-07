@@ -6,24 +6,23 @@ import Home from "./pages/Home";
 import Nav from "./Components/Nav";
 import Footer from "./Components/Footer";
 import User from "./Components/User";
-
+import { Container } from "semantic-ui-react";
 
 class App extends Component {
   render() {
-    return (
-      <div>
-      <Nav/>
-        <Router>
-          <Switch>
-            <Route exact path="/upload" component={UploadForm} />
-            <Route exact path="/create" component={CreatePost} />
-            <Route exact path="/" component={Home} />
-            <Route exact path="/my-profile" component={User}/>
-          </Switch>
-        </Router>
-        <Footer/>
-      </div>
-    );
+    return <div>
+        <Nav />
+        <Container className={"content"}>
+          <Router>
+            <Switch>
+              <Route exact path="/upload" component={UploadForm} />
+              <Route exact path="/create" component={CreatePost} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/my-profile" component={User} />
+            </Switch>
+          </Router>
+        </Container>
+      </div>;
   }
 }
 

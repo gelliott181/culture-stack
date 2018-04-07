@@ -1,45 +1,21 @@
 import React, { Component } from "react";
-import { Menu, Divider, Container } from 'semantic-ui-react';
+import { Menu, Divider, Container, Segment } from 'semantic-ui-react';
 
 
 export default class Footer extends Component {
     render () {
     
-   return (
-     <div>
-        <Container>
-            <Divider/>
-        </Container>
-        <div className="ui inverted vertically divided container vertical footer segment" style={{ position: "absolute", width: "100%", bottom: "1" }}>
-            <div className="ui center aligned container">
-            <div className="ui stackable inverted divided grid">
-                <div className="single wide column">
-                <h4 className="ui inverted header">Footer Header</h4>
-                <p>
-                    Extra space for a call to action inside the footer that
-                    could help re-engage users.
-                </p>
-                </div>
-            </div>
-            <div className="ui inverted section divider" />
-            <div className="ui horizontal inverted small divided link list">
-                <a className="item" href="#">
-                Site Map
-                </a>
-                <a className="item" href="#">
-                Contact Us
-                </a>
-                <a className="item" href="#">
-                Terms and Conditions
-                </a>
-                <a className="item" href="#">
-                Privacy Policy
-                </a>
-            </div>
-            </div>
-        </div>
-    </div>
-    )
+   return <Segment inverted>
+          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+          some form, by injected humour, or randomised words which don't look even slightly believable. If you are going
+          to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of
+          text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making
+          this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a
+          handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem
+          Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+        </Segment>
+
+
     }
 }
 
