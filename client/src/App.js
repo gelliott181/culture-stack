@@ -6,9 +6,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //Pages
 import CreatePost from "./pages/CreatePost";
 import Home from "./pages/Home";
-import Nav from "./Components/Nav";
-import Footer from "./Components/Footer";
-import User from "./Components/User";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import User from "./components/User";
 import NotFoundPage from './pages/NotFoundPage';
 import { Container } from "semantic-ui-react";
 import { withUser, update } from './services/withUser';
