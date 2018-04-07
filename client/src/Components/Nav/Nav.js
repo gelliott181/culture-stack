@@ -16,7 +16,9 @@ const styles = {
 };
 
 export default class Nav extends Component {
-  state = { activeItem: "home" };
+  state = { 
+          activeItem: "home",
+          };
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 

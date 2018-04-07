@@ -61,7 +61,7 @@ export default class CreatePost extends Component {
 
   render() {
     return (
-        <Grid container stackable doubling columns={2} divided="vertically" className="segment">
+        <Grid container stackable doubling columns={2} divided="vertically">
 
             <Grid.Column>
                 <Divider horizontal>
@@ -80,7 +80,7 @@ export default class CreatePost extends Component {
                 <Form>
                     <Divider hidden />
                     <Divider horizontal>Photo Details</Divider>
-                    <Form.Group widths="equal">
+                    <Form.Group  widths="equal" widths={3}>
                         <Form.Field control={Input} name="aperture" id="aperture-field" placeholder="Aperture" onChange={this.handleInputChange} />
                         <Form.Field control={Input} name="iso" id="iso-field" placeholder="ISO" onChange={this.handleInputChange} />
                         <Form.Field control={Input} name="speed" id="speed-field" placeholder="Shutter Speed" onChange={this.handleInputChange} />
