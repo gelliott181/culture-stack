@@ -20,9 +20,9 @@ export const tagOptions = [
     { key: 'lifestyle', text: 'Lifestyle', value: 'Lifestyle' },
     { key: 'smartphone', text: 'Smartphone', value: 'Smartphone' },
     { key: 'sony', text: 'Sony', value: 'Sony' },
-    { key: 'Nikon', text: 'Nikon', value: 'Nikon' },
-    { key: 'Cannon', text: 'Cannon', value: 'Cannon' },
-    { key: 'DSLR', text: 'DSLR', value: 'DSLR' },
+    { key: 'nikon', text: 'Nikon', value: 'Nikon' },
+    { key: 'cannon', text: 'Cannon', value: 'Cannon' },
+    { key: 'dslr', text: 'DSLR', value: 'DSLR' },
     { key: 'mirrorless', text: 'Mirrorless', value: 'Mirrorless' },
     { key: 'flash', text: 'Flash', value: 'Flash' },
 ]
