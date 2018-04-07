@@ -24,7 +24,7 @@ export default class Home extends Component  {
                 </Grid.Column>
                 <Grid.Column width={10}>
                   <Divider horizontal>F E E D</Divider>
-                  <div className="hero">
+                  <div className={"hero"}>
                     <Image src={"img/default_home.jpeg"} fluid />
                   </div>
                   <Segment textAlign="center" basic>
@@ -33,7 +33,7 @@ export default class Home extends Component  {
                       Share your photos and music. Learn and
                       collaborate. Join the culture today.
                     </p>
-                    <Button size="huge">Sign</Button>
+                    <Button size="huge">Sign up</Button>
                   </Segment>
                 </Grid.Column>
                 <Grid.Column width={3}>
@@ -49,97 +49,62 @@ export default class Home extends Component  {
             </div>
             <Card.Group itemsPerRow={4}>
               <Card>
-              <Card.Content>
-              <Image floated="left" size="mini" src="img/default_avatar.jpg" circular />
-              <Card.Header>
-                JJ 
-              </Card.Header>
-              </Card.Content>
-               <Image src='/img/default_placeholder.png'/>
-              <Card.Content>
-               <Card.Description>
-                  A description
-              </Card.Description>
-              </Card.Content>
-              <Card.Content extra>
-                Extra
-              </Card.Content>
-              </Card>
-             <Card>
-              <Card.Content>
-              <Image floated="left" size="mini" src="img/default_avatar.jpg" circular />
-              <Card.Header>
-                JJ 
-              </Card.Header>
-              </Card.Content>
-               <Image src='/img/default_placeholder.png'/>
-              <Card.Content>
-               <Card.Description>
-                  A description
-              </Card.Description>
-              </Card.Content>
-              <Card.Content extra>
-                Extra
-              </Card.Content>
+                <Card.Content>
+                  <Image floated="left" size="mini" src="img/default_avatar.jpg" circular />
+                  <Card.Header>JJ</Card.Header>
+                </Card.Content>
+                <Image src="/img/default_placeholder.png" />
+                <Card.Content>
+                  <Card.Description>A description</Card.Description>
+                </Card.Content>
+                <Card.Content extra>Extra</Card.Content>
               </Card>
               <Card>
-              <Card.Content>
-              <Image floated="left" size="mini" src="img/default_avatar.jpg" circular />
-              <Card.Header>
-                JJ 
-              </Card.Header>
-              </Card.Content>
-               <Image src='/img/default_placeholder.png'/>
-              <Card.Content>
-               <Card.Description>
-                  A description
-              </Card.Description>
-              </Card.Content>
-              <Card.Content extra>
-                Extra
-              </Card.Content>
+                <Card.Content>
+                  <Image floated="left" size="mini" src="img/default_avatar.jpg" circular />
+                  <Card.Header>JJ</Card.Header>
+                </Card.Content>
+                <Image src="/img/default_placeholder.png" />
+                <Card.Content>
+                  <Card.Description>A description</Card.Description>
+                </Card.Content>
+                <Card.Content extra>Extra</Card.Content>
               </Card>
               <Card>
-              <Card.Content>
-              <Image floated="left" size="mini" src="img/default_avatar.jpg" circular />
-              <Card.Header>
-                JJ 
-              </Card.Header>
-              </Card.Content>
-               <Image src='/img/default_placeholder.png'/>
-              <Card.Content>
-               <Card.Description>
-                  A description
-              </Card.Description>
-              </Card.Content>
-              <Card.Content extra>
-                Extra
-              </Card.Content>
+                <Card.Content>
+                  <Image floated="left" size="mini" src="img/default_avatar.jpg" circular />
+                  <Card.Header>JJ</Card.Header>
+                </Card.Content>
+                <Image src="/img/default_placeholder.png" />
+                <Card.Content>
+                  <Card.Description>A description</Card.Description>
+                </Card.Content>
+                <Card.Content extra>Extra</Card.Content>
               </Card>
               <Card>
-              <Card.Content>
-              <Image floated="left" size="mini" src="img/default_avatar.jpg" circular />
-              <Card.Header>
-                JJ 
-              </Card.Header>
-              </Card.Content>
-               <Image src='/img/default_placeholder.png'/>
-              <Card.Content>
-               <Card.Description>
-                  A description
-              </Card.Description>
-              </Card.Content>
-              <Card.Content extra>
-                Extra
-              </Card.Content>
+                <Card.Content>
+                  <Image floated="left" size="mini" src="img/default_avatar.jpg" circular />
+                  <Card.Header>JJ</Card.Header>
+                </Card.Content>
+                <Image src="/img/default_placeholder.png" />
+                <Card.Content>
+                  <Card.Description>A description</Card.Description>
+                </Card.Content>
+                <Card.Content extra>Extra</Card.Content>
               </Card>
-              
-             </Card.Group>
-           
-
+              <Card>
+                <Card.Content>
+                  <Image floated="left" size="mini" src="img/default_avatar.jpg" circular />
+                  <Card.Header>JJ</Card.Header>
+                </Card.Content>
+                <Image src="/img/default_placeholder.png" />
+                <Card.Content>
+                  <Card.Description>A description</Card.Description>
+                </Card.Content>
+                <Card.Content extra>Extra</Card.Content>
+              </Card>
+            </Card.Group>
           </Container>;
-
-        
     }
 }
 

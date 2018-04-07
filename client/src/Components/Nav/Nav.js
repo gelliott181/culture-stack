@@ -10,7 +10,8 @@ const styles = {
     padding: 0
   },
   letterSpace: {
-    letterSpacing: '12px'
+    letterSpacing: '6px',
+    fontWeight: 'bold'
   }
 };
 
@@ -25,14 +26,12 @@ export default class MenuExamplePointing extends Component {
     return <div>
         <Menu attached="top" inverted style={styles.navColor}>
           <div>
-            <Image src={"/img/branding.png"} size="tiny" className="ui" />
+            <Image src={"/img/branding.png"} size="tiny" />
           </div>
-          <h1 style={{...styles.zeromp, ...styles.letterSpace}}><Menu.Item name="CULTURE STACK" active={activeItem === "culture stack"} onClick={this.handleItemClick} /></h1>
+          <h1 style={Object.assign({}, styles.letterSpace, styles.zeromp)}><Menu.Item name="CULTURE STACK"/></h1>
           <Menu.Item name="submit a post" active={activeItem === "submit a post"} onClick={this.handleItemClick} />
           <Menu.Menu position="right">
-            <Menu.Item>
-              <Input icon="search" placeholder="Search..." />
-            </Menu.Item>
+          <Menu.Item name="sign in" active={activeItem === "sign in"} onClick={this.handleItemClick} />
           </Menu.Menu>
         </Menu>
       </div>;
