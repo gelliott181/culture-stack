@@ -4,7 +4,8 @@ import { Container, Segment, Grid, Image, Divider, TextArea, Form, List, Icon } 
 export default class User extends Component {
     render () {
 
-        return <Container>
+        return (
+        <Container>
             <Divider horizontal />
             <Segment>
               <Grid columns={"2"}>
@@ -58,5 +59,6 @@ export default class User extends Component {
               </Grid>
             </Segment>
           </Container>
+        );
     }
 }
