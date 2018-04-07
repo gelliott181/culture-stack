@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Header, Image, Modal, Form, Input, Checkbox, Message } from 'semantic-ui-react'
+import { Button, Header, Image, Modal, Form, Input, Checkbox, Message, Menu } from 'semantic-ui-react'
+import { update } from '../../services/withUser';
 
-export default class SignInModal extends {Component} {
+export default class SignInModal extends Component {
   state = {
     username: null,
     password: null
@@ -29,7 +30,7 @@ export default class SignInModal extends {Component} {
     .then(user => {
       // if the response is successful, update the current user and redirect to the home page
       update(user.data);
-      history.push('/');
+      history.push('/my-profile');
     })
     .catch(err => {
       // an error occured, so let's record the error in our state so we can display it in render
@@ -45,11 +46,39 @@ export default class SignInModal extends {Component} {
     const { error } = this.state;
 
     return (
-      <Modal dimmer={'inverted'} trigger={<Button size="huge">Modal</Button>}>
+      <Modal trigger={
+        <Button size="huge">Sign In</Button>
+      // <Menu.Item >Sign In</Menu.Item>
+      }>
 
         <Modal.Header>Sign In</Modal.Header>
         <Modal.Content>
-
+        <form onSubmit={this.handleLogin}>
+        <h1>Log In</h1>
+        {error &&
+          <div>
+            {error}
+          </div>
+        }
+        <div>
+          <input
+            name="username"
+            onChange={this.handleInputChanged}
+          />
+        </div>
+        <div>
+          <input
+            name="password"
+            type="password"
+            onChange={this.handleInputChanged}
+          />
+        </div>
+        <div>
+          <button type="submit">
+            Log In
+          </button>
+        </div>
+        </form>
         </Modal.Content>
       </Modal>
 

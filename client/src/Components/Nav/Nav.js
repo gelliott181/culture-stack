@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Menu, Input, Image } from 'semantic-ui-react';
+import SignInModal from "../SignInModal";
+
 
 const styles = {
   navColor: {
@@ -16,7 +18,14 @@ const styles = {
 };
 
 export default class Nav extends Component {
-  state = { activeItem: "home" };
+  state = { 
+    activeItem: "home", 
+    currentUser: sessionStorage.getItem('user')
+  };
+  
+  componentDidMount = () => {
+    console.log(this.state.currentUser);
+  }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
@@ -32,6 +41,9 @@ export default class Nav extends Component {
           <Menu.Item name="submit a post" active={activeItem === "submit a post"} onClick={this.handleItemClick} />
           <Menu.Menu position="right">
           <Menu.Item name="sign in" active={activeItem === "sign in"} onClick={this.handleItemClick} />
+          {/* <SignInModal
+            history = {this.props.history}
+          /> */}
           </Menu.Menu>
         </Menu>
       </div>;
