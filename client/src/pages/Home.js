@@ -5,7 +5,7 @@ import { Tag } from '../Components/Tag';
 export default class Home extends Component  {
     render () {
         return <Container>
-            <Grid columns={3}>
+            <Grid stackable>
               <Grid.Row>
                 <Grid.Column width={3}>
                   <Divider horizontal>FIND THE CULTURE</Divider>
