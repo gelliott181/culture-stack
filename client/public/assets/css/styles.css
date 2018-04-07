@@ -1,0 +1,78 @@
+html, body {
+    height: 100%;
+}
+
+body {
+   background-color: #FFFBF8;
+}
+
+.main-wrapper {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.content {
+    flex: 1;
+}
+
+.secondary-font {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.hero {
+    text-align: center;
+    padding: 10px;
+}
+
+.hero img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.social-media-icons, .help-module {
+    display: flex;
+    justify-content: center;
+}
+
+.help-module {
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    background-color: #30D5C8;
+
+}
+.ui .card {
+    margin: auto;
+    margin-top: 25px;
+}
+
+.card-box-shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* // Semantic UI modal position fix */
+.ui.active.dimmer.modals.transition {
+    display: flex !important;
+    display: -ms-flexbox !important;
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .shrink-header-font {
+        font-size: .5em;
+        /* display: none; */
+    }
+
+}
+
+@media (max-width: 330px) {
+    .mobile .hidden {
+        display: none;
+    }
+}

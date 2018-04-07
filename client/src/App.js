@@ -5,12 +5,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 //Pages
 import CreatePost from "./pages/CreatePost";
-import LoginPage from './pages/passportTesting/LoginPage';
-import RegisterUser from './pages/passportTesting/RegisterUser';
+import Home from "./pages/Home";
+import Nav from "./Components/Nav";
+import Footer from "./Components/Footer";
+import User from "./Components/User";
 import NotFoundPage from './pages/NotFoundPage';
-
+import { Container } from "semantic-ui-react";
 import { withUser, update } from './services/withUser';
-
 
 class App extends Component {
   componentDidMount() {
@@ -31,18 +32,19 @@ class App extends Component {
       });
   }
   render() {
-    // const { user } = this.props;
-    return (
-      <Router>
-        <Switch>
-          <Route exact path="/" component={LoginPage} />
-          <Route exact path="/login" component={LoginPage} />
-          <Route exact path="/create" component={RegisterUser} />
-          <Route exact path="/upload" component={CreatePost} />
-          <Route component={NotFoundPage} />
-        </Switch>
-      </Router>
-    );
+    return <div>
+        <Nav />
+        <Container className={"content"}>
+          <Router>
+            <Switch>
+              <Route exact path="/create" component={CreatePost} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/my-profile" component={User} />
+              <Route component={NotFoundPage} />
+            </Switch>
+          </Router>
+        </Container>
+      </div>;
   }
 }
 
