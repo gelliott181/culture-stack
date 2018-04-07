@@ -3,8 +3,6 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       mongoose = require('mongoose'),
       dotenv = require('dotenv'),
-      AWS = require('aws-sdk'),
-      Busboy = require('busboy'), 
       connectBusboy = require('connect-busboy'),
       busboyBodyParser = require('busboy-body-parser'),
       passport = require('passport');
@@ -39,8 +37,6 @@ if (process.env.NODE_ENV === "production") {
 }
 
 //Import API routes
-require("./routes/api.js")(app, db);
-require("./routes/aws-upload")(app, AWS, Busboy, dotenv, db);
 app.use(require('./routes'));
 
 // Send every request to the React app
