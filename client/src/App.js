@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import UploadForm from "./pages/UploadForm";
 import CreatePost from "./pages/CreatePost";
 import Home from "./pages/Home";
-import Nav from "./Components/Nav/Nav";
-import Footer from "./Components/Footer/Footer.js";
+import Nav from "./Components/Nav";
+import Footer from "./Components/Footer";
 import User from "./Components/User";
 
 

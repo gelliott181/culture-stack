@@ -15,7 +15,7 @@ const styles = {
   }
 };
 
-export default class MenuExamplePointing extends Component {
+export default class Nav extends Component {
   state = { activeItem: "home" };
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });

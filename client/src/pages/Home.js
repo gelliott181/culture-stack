@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Grid, Container, Image, Divider, Item, Icon, Button, Segment, Header, Card } from "semantic-ui-react";
 import { Tag } from '../Components/Tag';
+import UserCard from '../Components/UserCard';
+import RegisterModal from '../Components/RegisterModal';
 
 export default class Home extends Component  {
     render () {
@@ -34,6 +36,7 @@ export default class Home extends Component  {
                       collaborate. Join the culture today.
                     </p>
                     <Button size="huge">Sign up</Button>
+                    <RegisterModal />                    
                   </Segment>
                 </Grid.Column>
                 <Grid.Column width={3}>
@@ -103,6 +106,13 @@ export default class Home extends Component  {
                 </Card.Content>
                 <Card.Content extra>Extra</Card.Content>
               </Card>
+              <UserCard
+                name = 'Test'
+                userImage = '/img/default_placeholder.png'
+                userAvatar = 'img/default_avatar.jpg'
+                description = 'description'
+                extra = 'Extra'
+              />
             </Card.Group>
           </Container>;
     }
