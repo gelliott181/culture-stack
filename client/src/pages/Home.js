@@ -33,7 +33,7 @@ export default class Home extends Component  {
                       Share your photos and music. Learn and
                       collaborate. Join the culture today.
                     </p>
-                    <Button size="huge">Sign up</Button>
+                    <Button size="huge">Sign Up</Button>
                   </Segment>
                 </Grid.Column>
                 <Grid.Column width={3}>
@@ -47,63 +47,6 @@ export default class Home extends Component  {
                 <Icon name="angle down" size="big" />
               </Divider>
             </div>
-            <Card.Group itemsPerRow={4}>
-              <Card>
-                <Card.Content>
-                  <Image floated="left" size="mini" src="img/default_avatar.jpg" circular />
-                  <Card.Header>JJ</Card.Header>
-                </Card.Content>
-                <Image src="/img/default_placeholder.png" />
-                <Card.Content>
-                  <Card.Description>A description</Card.Description>
-                </Card.Content>
-                <Card.Content extra>Extra</Card.Content>
-              </Card>
-              <Card>
-                <Card.Content>
-                  <Image floated="left" size="mini" src="img/default_avatar.jpg" circular />
-                  <Card.Header>JJ</Card.Header>
-                </Card.Content>
-                <Image src="/img/default_placeholder.png" />
-                <Card.Content>
-                  <Card.Description>A description</Card.Description>
-                </Card.Content>
-                <Card.Content extra>Extra</Card.Content>
-              </Card>
-              <Card>
-                <Card.Content>
-                  <Image floated="left" size="mini" src="img/default_avatar.jpg" circular />
-                  <Card.Header>JJ</Card.Header>
-                </Card.Content>
-                <Image src="/img/default_placeholder.png" />
-                <Card.Content>
-                  <Card.Description>A description</Card.Description>
-                </Card.Content>
-                <Card.Content extra>Extra</Card.Content>
-              </Card>
-              <Card>
-                <Card.Content>
-                  <Image floated="left" size="mini" src="img/default_avatar.jpg" circular />
-                  <Card.Header>JJ</Card.Header>
-                </Card.Content>
-                <Image src="/img/default_placeholder.png" />
-                <Card.Content>
-                  <Card.Description>A description</Card.Description>
-                </Card.Content>
-                <Card.Content extra>Extra</Card.Content>
-              </Card>
-              <Card>
-                <Card.Content>
-                  <Image floated="left" size="mini" src="img/default_avatar.jpg" circular />
-                  <Card.Header>JJ</Card.Header>
-                </Card.Content>
-                <Image src="/img/default_placeholder.png" />
-                <Card.Content>
-                  <Card.Description>A description</Card.Description>
-                </Card.Content>
-                <Card.Content extra>Extra</Card.Content>
-              </Card>
-            </Card.Group>
           </Container>;
     }
 }

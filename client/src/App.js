@@ -5,25 +5,26 @@ import CreatePost from "./pages/CreatePost";
 import Home from "./pages/Home";
 import Nav from "./Components/Nav/Nav";
 import Footer from "./Components/Footer/Footer.js";
-import User from "./Components/User";
+import User from "./Components/User/User.js";
+import { Container } from "semantic-ui-react";
+
 
 
 class App extends Component {
   render() {
-    return (
-      <div>
-      <Nav/>
-        <Router>
-          <Switch>
-            <Route exact path="/upload" component={UploadForm} />
-            <Route exact path="/create" component={CreatePost} />
-            <Route exact path="/" component={Home} />
-            <Route exact path="/my-profile" component={User}/>
-          </Switch>
-        </Router>
-        <Footer/>
-      </div>
-    );
+    return <div>
+        <Nav />
+        <Container className={"content"}>
+          <Router>
+            <Switch>
+              <Route exact path="/upload" component={UploadForm} />
+              <Route exact path="/create" component={CreatePost} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/my-profile" component={User} />
+            </Switch>
+          </Router>
+        </Container>
+      </div>;
   }
 }
 
