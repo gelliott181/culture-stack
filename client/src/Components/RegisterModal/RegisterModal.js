@@ -7,13 +7,10 @@ class RegisterModal extends Component {
   state = {
     username: null,
     password: null,
-    firstname: null,
-    lastname: null,
-    avatar: null,
-    email: null,
-    score: 0,
-    occupation: null,
-    description: null,
+    // firstname: null,
+    // lastname: null,
+    // email: null,
+    // occupation: null,
     error: null
   }  
   
@@ -53,7 +50,8 @@ class RegisterModal extends Component {
     })
       .then(user => {
         // if the response is successful, make them log in
-        history.push('/login');
+        history.push('/my-profile');
+        console.log(user);
       })
       .catch(err => {
 
@@ -67,11 +65,11 @@ class RegisterModal extends Component {
     const { error } = this.state;
 
     return (
-      <Modal dimmer={'inverted'} trigger={<Button size="huge">Modal</Button>}>
+      <Modal  trigger={<Button size="huge">Register</Button>}>
 
         <Modal.Header>Register Your Account</Modal.Header>
         <Modal.Content>
-          <Form error onSubmit={this.handleLogin}>
+          <Form error>
             <Form.Group widths='equal'>
               <Form.Input fluid
                 name="username"
@@ -98,7 +96,6 @@ class RegisterModal extends Component {
               <Form.Input fluid
                   name="email"
                   onChange={this.handleInputChanged}
-                  type="password"
                   label='Email Address'
                   placeholder='john.smith@gmail.com'
                 />
@@ -127,7 +124,7 @@ class RegisterModal extends Component {
             <Form.Field>
               <Checkbox label='I agree to the Terms and Conditions' />
             </Form.Field>
-            <Button type='submit'>Submit</Button>
+            <Button type='submit' onClick={this.handleLogin}>Submit</Button>
           </Form>
         </Modal.Content>
       </Modal>

@@ -3,6 +3,7 @@ import { Grid, Container, Image, Divider, Item, Icon, Button, Segment, Header, C
 import { Tag } from '../components/Tag';
 import UserCard from '../components/UserCard';
 import RegisterModal from '../components/RegisterModal';
+import SignInModal from '../components/SignInModal';
 
 export default class Home extends Component  {
     render () {
@@ -36,7 +37,12 @@ export default class Home extends Component  {
                       collaborate. Join the culture today.
                     </p>
                     <Button size="huge">Sign up</Button>
-                    <RegisterModal />                    
+                    <RegisterModal
+                      history = {this.props.history}  
+                    />
+                    <SignInModal
+                      history = {this.props.history}  
+                    />
                   </Segment>
                 </Grid.Column>
                 <Grid.Column width={3}>
