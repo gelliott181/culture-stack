@@ -18,7 +18,7 @@ module.exports = function uploadToS3(file) {
             console.log('error in callback');
             console.log(err);
             }
-            console.log('success');
+            console.log('AWS Upload Complete!');
             console.log(data);
         });
     });
