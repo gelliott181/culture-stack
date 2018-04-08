@@ -48,11 +48,13 @@ export default class Nav extends Component {
     const { activeItem } = this.state;
 
     return <div>
-        <Menu attached="top" inverted style={styles.navColor}>
+        <Menu attached="top" stackable inverted style={styles.navColor}>
           <div>
             <Image src={"/img/branding.png"} size="tiny" />
           </div>
           <h1 style={Object.assign({}, styles.letterSpace, styles.zeromp)}><Menu.Item name="CULTURE STACK"/></h1>
+          <Menu.Item name="home" active={activeItem === "home"} onClick={this.handleItemClick} />
+          <Menu.Item name="browse posts" active={activeItem === "browse posts"} onClick={this.handleItemClick} />
           <Menu.Item name="submit a post" active={activeItem === "submit a post"} onClick={this.handleItemClick} />
           <Menu.Menu position="right">
           
