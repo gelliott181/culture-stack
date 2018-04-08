@@ -36,11 +36,7 @@ export default class Home extends Component  {
                       Share your photos and music. Learn and
                       collaborate. Join the culture today.
                     </p>
-                    <Button size="huge">Sign up</Button>
                     <RegisterModal
-                      history = {this.props.history}  
-                    />
-                    <SignInModal
                       history = {this.props.history}  
                     />
                   </Segment>

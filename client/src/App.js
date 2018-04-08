@@ -32,19 +32,22 @@ class App extends Component {
       });
   }
   render() {
-    return <div>
-        <Nav />
-        <Container className={"content"}>
-          <Router>
+    return (
+      <Router>
+        <div>
+          <Nav />
+          <Container className={"content"}>
             <Switch>
-              <Route exact path="/create" component={CreatePost} />
               <Route exact path="/" component={Home} />
+              <Route exact path="/register" component={Home} />
+              <Route exact path="/post/create" component={CreatePost} />
               <Route exact path="/my-profile" component={User} />
               <Route component={NotFoundPage} />
             </Switch>
-          </Router>
-        </Container>
-      </div>;
+          </Container>
+        </div>
+      </Router>
+    )
   }
 }
 
