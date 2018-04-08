@@ -48,7 +48,7 @@ export default class Nav extends Component {
     const { activeItem } = this.state;
 
     return <div>
-        <Menu attached="top" inverted style={styles.navColor}>
+        <Menu attached="top" stackable inverted style={styles.navColor}>
           <div>
             <Image src={"/img/branding.png"} size="tiny" />
           </div>
