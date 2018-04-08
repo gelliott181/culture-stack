@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import history from "../../history"
 import { Grid, Divider, Button, Header, Image, Modal, Form, Input, Checkbox, Message, Menu } from 'semantic-ui-react'
+import { Link } from 'react-router-dom';
+import { Button, Header, Image, Modal, Form, Input, Checkbox, Message, Menu } from 'semantic-ui-react'
 import { update } from '../../services/withUser';
 
 export default class SignInModal extends Component {
@@ -47,10 +49,12 @@ export default class SignInModal extends Component {
     .then(user => {
       // if the response is successful, update the current user and redirect to the home page
       update(user.data);
+
       console.log("logged in");
       // Callback to Nav to call handleSessionChange() and show user/logout items in Nav
       this.props.callbackSessionChange();
-      history.push('/home');
+      history.push('/browse');
+
     })
     .catch(err => {
       // an error occured, so let's record the error in our state so we can display it in render
@@ -74,6 +78,7 @@ export default class SignInModal extends Component {
 
         <Modal.Header>Sign In</Modal.Header>
         <Modal.Content>
+
           <Grid stackable padded columns="equal">
             <Grid.Column>
             
@@ -121,7 +126,6 @@ export default class SignInModal extends Component {
           </Grid>
         </Modal.Content>
         
-
       </Modal>
 
     );
