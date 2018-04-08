@@ -1,10 +1,8 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import history from "../../history"
-import { Grid, Divider, Button, Header, Image, Modal, Form, Input, Checkbox, Message, Menu } from 'semantic-ui-react'
-import { Link } from 'react-router-dom';
-import { Button, Header, Image, Modal, Form, Input, Checkbox, Message, Menu } from 'semantic-ui-react'
+import history from "../../history";
+import { Grid, Divider, Button, Header, Image, Modal, Form, Input, Checkbox, Message, Menu } from 'semantic-ui-react';
 import { update } from '../../services/withUser';
 
 export default class SignInModal extends Component {
