@@ -53,9 +53,9 @@ export default class Nav extends Component {
             <Image src={"/img/branding.png"} size="tiny" />
           </div>
           <h1 style={Object.assign({}, styles.letterSpace, styles.zeromp)}><Menu.Item name="CULTURE STACK"/></h1>
-          <Menu.Item name="home" active={activeItem === "home"} onClick={this.handleItemClick} />
-          <Menu.Item name="browse posts" active={activeItem === "browse posts"} onClick={this.handleItemClick} />
-          <Menu.Item name="submit a post" active={activeItem === "submit a post"} onClick={this.handleItemClick} />
+          <Menu.Item as={Link} to="/" name="home" active={activeItem === "home"} onClick={this.handleItemClick} />
+          <Menu.Item as={Link} to="/browse" name="browse posts" active={activeItem === "browse posts"} onClick={this.handleItemClick} />
+          <Menu.Item as={Link} to ="/create" name="submit a post" active={activeItem === "submit a post"} onClick={this.handleItemClick} />
           <Menu.Menu position="right">
           
           {this.state.sessionUser ? (

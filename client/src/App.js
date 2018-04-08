@@ -40,8 +40,9 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route exact path="/home" component={Home} />
               <Route exact path="/register" component={Home} />
-              <Route exact path="/post/create" component={CreatePost} />
-              <Route exact path="/my-profile" component={User} />
+              <Route exact path="/create" component={CreatePost} />
+              <Route exact path="/dashboard" component={User} />
+              <Route exact path="/user/:id" component={User} />
               <Route component={NotFoundPage} />
             </Switch>
           </Container>
