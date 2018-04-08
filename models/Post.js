@@ -6,7 +6,7 @@ const PostSchema = new Schema({
     type: String,
     required: [true, "Post title required"]
   },
-  QA: {
+  QP: {
     type: String
   },
   img_filename:{
@@ -15,23 +15,29 @@ const PostSchema = new Schema({
   aperture:{
     type: String
   },
-  ISO:{
+  iso:{
     type: String
   },
   speed: {
     type: String
   },
+  camera: {
+    type: String
+  },
+  lens: {
+    type: String
+  },
   body:{
     type: String
   },
-  tags:{
+  tags:[{
     type: String
-  },
+  }],
   author:{
     type: Schema.Types.ObjectId,
     ref: "User"
   },
-  comment: [{
+  comments: [{
     type: Schema.Types.ObjectId,
     ref: "Comment"
   }]

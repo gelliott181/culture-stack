@@ -1,8 +1,11 @@
 import axios from "axios";
 
 export default {
-    uploadImage(formData){
-        console.log("Hello");
-        return axios.post("/api/upload", formData, {headers: { 'content-type': 'multipart/form-data'}});
+    uploadImage: function(formData){
+        return axios.post("/api/posts", formData, {headers: { 'content-type': 'multipart/form-data'}});
+    },
+    getPost: function(id) {
+        console.log(id);
+        return axios.get("api/posts/" + id);
     }
 }

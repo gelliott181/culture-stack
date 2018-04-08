@@ -1,102 +1,117 @@
 import React, { Component } from 'react'
-import { Form, Radio } from 'semantic-ui-react'
+import { Grid, Divider, Header, Image, Form, Input, Radio, Dropdown, TextArea, Button } from 'semantic-ui-react';
+
+import { tagOptions } from '../common';
+import API from "../utils/API";
+
 
 export default class CreatePost extends Component {
-  state = {}
-  handleChange = (e, { value }) => this.setState({ value })
+    
+    state = {
+        img_file: null,
+        aperture: "",
+        iso: "",
+        speed: "",
+        camera: "",
+        lens: "",
+        title: "",
+        QP: "",
+        body: "",
+        tags: []
+    }
+
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    };
+
+    handleFileChange = event => {
+        this.setState({img_file: event.target.files[0]});
+    };
+
+    handleQPChange = (event, { value }) => this.setState({ QP: value });
+
+    handleTagsChange = (event, { value }) => this.setState({ tags: value });
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state);
+        if (this.state.img_file && this.state.title && this.state.QP && this.state.body){
+            let formData = new FormData();
+            formData.append("aperture", this.state.aperture);
+            formData.append("iso", this.state.iso);
+            formData.append("speed", this.state.speed);
+            formData.append("camera", this.state.camera);
+            formData.append("lens", this.state.lens);
+            formData.append("title", this.state.title);
+            formData.append("QP", this.state.QP);
+            formData.append("body", this.state.body);
+            formData.append("tags", this.state.tags);
+            formData.append("img_file", this.state.img_file);
+            
+            API.uploadImage(formData)
+            .then(res => {
+                this.setState({img_file: null});
+            })
+            .catch(err => console.log(err));
+        }
+    }
 
   render() {
     return (
-        <section className="ui two column double stackable grid vertically divided container segment">
+        <Grid container stackable doubling columns={2} divided="vertically" className="segment">
 
-            <div className="column">
-                <div className="ui horizontal divider">
-                    <h2>Submit your post</h2>
-                </div>
-                    <img className="ui image" src="./img/default_placeholder.png" />
+            <Grid.Column>
+                <Divider horizontal>
+                    <Header as="h1">Submit your post</Header>
+                </Divider>
+                    <Image src="./img/default_placeholder.png" />
                 
-                <div className="ui form">
-                    <div className="field">
-                        <input name="myFile" type="file" placeholder="Upload your image or audio"/>
-                    </div>
-                </div>
-            </div>
+                <Form>
+                    <Form.Field>
+                        <Input icon="camera" iconPosition="left" name="img_file" type="file" onChange={this.handleFileChange} />
+                    </Form.Field>
+                </Form>
+            </Grid.Column>
             
-            <div className="column">
-                <form className="ui form">
-                    <div className="field">
-                        <h4 className="ui dividing header">Photo Details</h4>
-                        <div className="three fields">
-                            <div className="field">
-                                <input type="text" name="aperture" placeholder="Aperature" />
-                            </div>
-                            <div className="field">
-                                <input type="text" name="iso" placeholder="ISO" />
-                            </div>
-                            <div className="field">
-                                <input type="text" name="shutter speed" placeholder="Shutter Speed" />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="field">
-                        <label>Gear</label>
-                        <div className="fields">
-                            <div className="twelve wide field">
-                                <input type="text" name="camera" placeholder="Camera" />
-                            </div>
-                            <div className="four wide field">
-                                <input type="text" name="lens" placeholder="Lens" />
-                            </div>
-                        </div>
-                    </div>
-                
-                    <h4 className="ui dividing header">Post Details</h4>
-                        <div className="field">
-                            <label>Title</label>
-                            <input type="text" name="title" placeholder="Title" />
-                        </div>
-                        <div className="ui form">
-                            <div className="inline fields">
-                                <label htmlFor="fruit">Submission Type</label>
-                                <div className="field">
-                                    <div className="ui radio checkbox">
-                                        <input type="radio" name="fruit" checked="" tabIndex="0" className="hidden" />
-                                        <label>Question</label>
-                                    </div>
-                                </div>
-                                <div className="field">
-                                    <div className="ui radio checkbox">
-                                        <input type="radio" name="fruit" tabIndex="0" className="hidden" />
-                                        <label>Post</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="ui form">
-                            <div className="field">
-                                <label>Description</label>
-                                <textarea></textarea>
-                            </div>
-                        </div>
-                        <div className="ui divider hidden"></div>
-                        <div className="field">
-                            <h4 className="ui dividing header">Tags</h4>
-                            <select name="skills" multiple="" className="ui fluid dropdown">
-                                <option value="">Skills</option>
-                                <option value="angular">Angular</option>
-                                <option value="css">CSS</option>
-                                <option value="ember">Ember</option>
-                                <option value="html">HTML</option>
-                                <option value="javascript">Javascript</option>
-                                <option value="meteor">Meteor</option>
-                                <option value="node">NodeJS</option>
-                            </select>
-                        </div>
-                        <div className="ui divider hidden"></div>
-                    <div className="ui button" tabIndex="0">Submit Post</div>
-                </form>
-            </div>
-        </section>
+            <Grid.Column>
+                <Form>
+                    <Divider hidden />
+                    <Divider horizontal>Photo Details</Divider>
+                    <Form.Group widths="equal">
+                        <Form.Field control={Input} name="aperture" id="aperture-field" placeholder="Aperture" onChange={this.handleInputChange} />
+                        <Form.Field control={Input} name="iso" id="iso-field" placeholder="ISO" onChange={this.handleInputChange} />
+                        <Form.Field control={Input} name="speed" id="speed-field" placeholder="Shutter Speed" onChange={this.handleInputChange} />
+                    </Form.Group>
+
+                    <Form.Group widths="equal" label="Gear">
+                        <Form.Field control={Input} name="camera" placeholder="Camera" icon="retro camera" iconPosition="left" onChange={this.handleInputChange} />
+                        <Form.Field control={Input} name="lens" placeholder="Lens" icon="dot circle" iconPosition="left" onChange={this.handleInputChange} />
+                    </Form.Group>
+
+
+                    <Divider hidden />
+                    <Divider horizontal>{`${this.state.QP} Details`}</Divider>
+                        <Form.Field control={Input} label="Title" name="title" placeholder="Title" id="title-field" onChange={this.handleInputChange} />
+                            <Form.Group inline>
+                                <label>Submission Type:</label>
+                                <Form.Field control={Radio} label='Question' value='Question' checked={this.state.QP === 'Question'} onChange={this.handleQPChange} />
+                                <Form.Field control={Radio} label='Post' value='Post' checked={this.state.QP === 'Post'} onChange={this.handleQPChange} />
+                            </Form.Group>
+                        
+                            <Form.Field control={TextArea} label="Description" name="body" id="description-field" onChange={this.handleInputChange} />
+                        
+                        <Divider hidden />
+
+                        <Form.Field control={Dropdown} label="Tags" name="tags" placeholder='Tags' id="tags-drop" fluid multiple search selection options={tagOptions} onChange={this.handleTagsChange} />
+
+                        <Divider hidden />
+                    <Button type="submit" floated="right" onClick={this.handleSubmit}>Submit Post</Button>
+                </Form>
+            </Grid.Column>
+        </Grid>
     )
   }
 }

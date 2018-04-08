@@ -3,11 +3,10 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       mongoose = require('mongoose'),
       dotenv = require('dotenv'),
-      AWS = require('aws-sdk'),
-      Busboy = require('busboy');
       connectBusboy = require('connect-busboy'),
-      busboyBodyParser = require('busboy-body-parser');
-
+      busboyBodyParser = require('busboy-body-parser'),
+      passport = require('passport');
+      
 // Store models in db
 const db = require("./models");
 
@@ -22,6 +21,8 @@ const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/cultureStack
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI, {});
 
+require('./passport')(app);
+
 // Use Busboy!
 app.use(connectBusboy());
 
@@ -32,17 +33,11 @@ app.use(busboyBodyParser());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("public"));
+  app.use(express.static("client/build"));
 }
 
-// require('./passport')(app);
-
-//Import Routes
-require('./routes/aws-upload')(app, AWS, Busboy, dotenv);
-const routes = require('./routes');
-app.use(routes);
-
-
+//Import API routes
+app.use("/", require('./routes'));
 
 // Send every request to the React app
 // Define any API routes before this runs
