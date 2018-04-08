@@ -39,6 +39,7 @@ export default class Home extends Component  {
                     <RegisterModal
                       history = {this.props.history}  
                     />
+                    <SignInModal />
                   </Segment>
                 </Grid.Column>
                 <Grid.Column width={3}>

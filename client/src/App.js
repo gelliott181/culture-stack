@@ -33,12 +33,12 @@ class App extends Component {
   }
   render() {
     return (
-      <Router>
         <div>
-          <Nav />
+          <Nav history />
           <Container className={"content"}>
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route exact path="/home" component={Home} />
               <Route exact path="/register" component={Home} />
               <Route exact path="/post/create" component={CreatePost} />
               <Route exact path="/my-profile" component={User} />
@@ -46,7 +46,6 @@ class App extends Component {
             </Switch>
           </Container>
         </div>
-      </Router>
     )
   }
 }
