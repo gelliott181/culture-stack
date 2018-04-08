@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from "react";
 import { Grid, Container, Image, Divider, Item, Icon, Button, Segment, Header, Card } from "semantic-ui-react"; 
-import UserCard from "../Components/UserCard";
+import UserCard from "../components/UserCard";
 
 
 

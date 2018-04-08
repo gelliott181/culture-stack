@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Divider, Header, Image, Form, Input, Radio, Dropdown, TextArea, Button, Comment, Segment } from 'semantic-ui-react';
+import { Grid, Divider, Header, Image, Form, Input, Radio, Dropdown, TextArea, Button, Comment, Segment, Icon, Statistic, Popup } from 'semantic-ui-react';
 import { tagOptions } from '../common';
 import API from "../utils/API";
 
@@ -23,25 +23,39 @@ componentDidMount() {
    return (
         <Grid container stackable doubling>
             <Grid.Row>
-                <Grid.Column>
+               <Grid.Column mobile={16} tablet={4} computer={10}>
                     <Divider horizontal>
                         <Header as="h2">{this.state.post.title}</Header>
                     </Divider>
                     <Image src="../img/default_placeholder.png" size="huge"/>
                 </Grid.Column>
-            </Grid.Row>
-
-                <Grid.Column>
-                  <Divider hidden/>
-                   <Divider horizontal>
-                       <Header as="h3">PHOTO DETAILS</Header>
-                       <Segment.Group horizontal attached="bottom">
-                            <Segment>Aperature</Segment>
-                           <Segment>ISO</Segment>
-                           <Segment>Shutter Speed</Segment>
+        
+                <Grid.Column mobile={16} tablet={4} computer={6}>
+                   <Divider hidden><Statistic color="yellow" size="small"><Popup
+                       trigger={<Statistic.Value>Q</Statistic.Value>}
+                       content="This submission is a Question. Review the post details below, and feel free to leave an answer!"
+                       basic/></Statistic></Divider>
+                   <Header as="h3" textAlign="center">PHOTO DETAILS</Header>
+                       <Segment.Group horizontal>
+                            <Segment textAlign="center">
+                                <Header as="h5">Aperature</Header>
+                                    Data
+                            </Segment>
+                            <Segment textAlign="center">
+                            <Header as="h5">ISO</Header>
+                                    Data
+                            </Segment>
+                            <Segment textAlign="center">
+                            <Header as="h5">Shutter Speed</Header>
+                                    Data
+                            </Segment>
+                        </Segment.Group>
+                       <Segment.Group vertical>
+                           <Segment textAlign="center"><Icon name="camera"></Icon>Camera</Segment>
+                           <Segment textAlign="center"><Icon name="camera retro"></Icon>Lens</Segment>
                        </Segment.Group>
-                   </Divider>
                 </Grid.Column>
+            </Grid.Row>
             <Grid.Row>
                <Grid.Column mobile={16} tablet={4} computer={12}>
                    <Comment.Group fluid>
