@@ -2,6 +2,8 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Container } from "semantic-ui-react";
+import { withUser, update } from './services/withUser';
 
 //Pages
 import CreatePost from "./pages/CreatePost";
@@ -10,8 +12,8 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import User from "./components/User";
 import NotFoundPage from './pages/NotFoundPage';
-import { Container } from "semantic-ui-react";
-import { withUser, update } from './services/withUser';
+import UserRegistration from "./pages/UserRegistration";
+
 
 class App extends Component {
   componentDidMount() {
@@ -39,7 +41,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/home" component={Home} />
-              <Route exact path="/register" component={Home} />
+              <Route exact path="/register" component={UserRegistration} />
               <Route exact path="/create" component={CreatePost} />
               <Route exact path="/dashboard" component={User} />
               <Route exact path="/user/:id" component={User} />
