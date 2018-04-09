@@ -7,6 +7,7 @@ import { withUser, update } from './services/withUser';
 
 //Pages
 import CreatePost from "./pages/CreatePost";
+import ViewPost from "./pages/ViewPost";
 import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default {
-    uploadImage(formData){
+    uploadImage: function(formData){
         return axios.post("/api/posts", formData, {headers: { 'content-type': 'multipart/form-data'}});
     },
     getPost(id){

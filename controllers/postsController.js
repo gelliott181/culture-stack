@@ -46,6 +46,7 @@ module.exports = {
     },
     
     findById : (req, res) => {
+        console.log(req.params.id)
         db.Post
             .findById(req.params.id)
             .then(dbModel => res.json(dbModel))

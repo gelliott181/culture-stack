@@ -33,11 +33,11 @@ app.use(busboyBodyParser());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("public"));
+  app.use(express.static("client/build"));
 }
 
 //Import API routes
-app.use(require('./routes'));
+app.use("/", require('./routes'));
 
 // Send every request to the React app
 // Define any API routes before this runs

@@ -1,6 +1,5 @@
-const express = require('express');
 
-const router = express.Router();
+const router = require("express").Router();
 // add API routes to current router
 // NOTE: API routes must be added first, because htmlRoutes has a wildcard route
 // which will swallow anything that isn't matched first
