@@ -63,7 +63,7 @@ export default class Nav extends Component {
           
           {this.state.sessionUser ? (
           
-          <Menu.Item name={this.state.sessionUser.username} active={activeItem === ""} onClick={this.handleItemClick} />
+          <Menu.Item as={Link} to="/dashboard" name={this.state.sessionUser.username} active={activeItem === ""} onClick={this.handleItemClick} />
           
           ) : (
           <SignInModal callbackSessionChange={this.handleSessionChange} />

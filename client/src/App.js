@@ -11,6 +11,7 @@ import ViewPost from "./pages/ViewPost";
 import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import Browse from "./pages/Browse";
 import User from "./components/User";
 import NotFoundPage from './pages/NotFoundPage';
 import UserRegistration from "./pages/UserRegistration";
@@ -45,7 +46,8 @@ class App extends Component {
               <Route exact path="/register" component={UserRegistration} />
               <Route exact path="/create" component={CreatePost} />
               <Route exact path="/dashboard" component={User} />
-              <Route exact path="/user/:id" component={User} />
+              <Route exact path="/browse" component={Browse} />
+              <Route exact path="/post=:postid" component={ViewPost} />
               <Route component={NotFoundPage} />
             </Switch>
           </Container>
