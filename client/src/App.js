@@ -46,8 +46,9 @@ class App extends Component {
               <Route exact path="/register" component={UserRegistration} />
               <Route exact path="/create" component={CreatePost} />
               <Route exact path="/dashboard" component={User} />
+              <Route exact path="/user/:userid" component={User} />
               <Route exact path="/browse" component={Browse} />
-              <Route exact path="/post=:postid" component={ViewPost} />
+              <Route exact path="/posts/:postid" component={ViewPost} />
               <Route component={NotFoundPage} />
             </Switch>
           </Container>
