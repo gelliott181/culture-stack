@@ -140,7 +140,7 @@ export default class UserRegistration extends Component {
               <Form.Checkbox 
                 required 
                 label='I agree to the Terms and Conditions' 
-                value={this.state.checked}
+                checked={this.state.checked}
                 onClick={this.handleChecked}
               />
             </Form.Field>
