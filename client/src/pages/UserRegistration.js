@@ -11,7 +11,9 @@ export default class UserRegistration extends Component {
     lastname: null,
     email: null,
     occupation: null,
-    error: null
+    error: null,
+    checked: false,
+    disabled: true
   }  
   
   handleInputChanged = (event) => {
@@ -54,7 +56,7 @@ export default class UserRegistration extends Component {
     })
       .then(user => {
         // if the response is successful, make them log in
-        history.push('/Browse');
+        history.push('/');
         console.log(user);
       })
       .catch(err => {
@@ -63,6 +65,16 @@ export default class UserRegistration extends Component {
           error: err.response.data.message || err.message
         });
       });
+  }
+
+  handleChecked = event => {
+    this.setState({
+      checked: !this.state.checked,
+      disabled: !this.state.disabled
+    });
+    console.log('checked', this.state.checked);
+    console.log('disabled', this.state.disabled);
+
   }
 
   render() {
@@ -74,13 +86,13 @@ export default class UserRegistration extends Component {
 
           <Form error>
             <Form.Group widths='equal'>
-              <Form.Input fluid
+              <Form.Input fluid required
                 name="username"
                 onChange={this.handleInputChanged}
                 placeholder='Username'
                 label='Username'
               />
-              <Form.Input fluid
+              <Form.Input fluid required
                 name="password"
                 onChange={this.handleInputChanged}
                 type="password"
@@ -125,9 +137,14 @@ export default class UserRegistration extends Component {
               />
             </Form.Group>
             <Form.Field>
-              <Checkbox label='I agree to the Terms and Conditions' />
+              <Form.Checkbox 
+                required 
+                label='I agree to the Terms and Conditions' 
+                value={this.state.checked}
+                onClick={this.handleChecked}
+              />
             </Form.Field>
-            <Button type='submit' onClick={this.handleLogin}>Submit</Button>
+            <Button disabled={this.state.disabled} type='submit' onClick={this.handleLogin}>Submit</Button>
           </Form>
         </Container>
     );
