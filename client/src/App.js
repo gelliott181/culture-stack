@@ -12,7 +12,7 @@ import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Browse from "./pages/Browse";
-import User from "./components/User";
+import User from "./pages/User";
 import NotFoundPage from './pages/NotFoundPage';
 import UserRegistration from "./pages/UserRegistration";
 
@@ -37,7 +37,7 @@ class App extends Component {
   }
   render() {
     return (
-        <div>
+        <div className={"background-color: #FFFBF8"}>
           <Nav history />
           <Container className={"content"}>
             <Switch>

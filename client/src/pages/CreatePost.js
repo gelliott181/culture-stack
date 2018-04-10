@@ -65,7 +65,7 @@ export default class CreatePost extends Component {
 
             <Grid.Column>
                 <Divider horizontal>
-                    <Header as="h1">Submit your post</Header>
+                    <Header as="h1">SUBMIT A POST</Header>
                 </Divider>
                     <Image src="./img/default_placeholder.png" />
                 
@@ -79,6 +79,13 @@ export default class CreatePost extends Component {
             <Grid.Column>
                 <Form>
                     <Divider hidden />
+                      <Divider horizontal>
+                       <Button.Group>
+                                <Button color="yellow" onClick={this.handleQPChange}>Question</Button>
+                                <Button.Or />
+                                <Button color="pink"  onClick={this.handleQPChange}>Post</Button>
+                        </Button.Group>
+                        </Divider>
                     <Divider horizontal>Photo Details</Divider>
                     <Form.Group  widths="equal" widths={3}>
                         <Form.Field control={Input} name="aperture" id="aperture-field" placeholder="Aperture" onChange={this.handleInputChange} />
@@ -95,11 +102,6 @@ export default class CreatePost extends Component {
                     <Divider hidden />
                     <Divider horizontal>{`${this.state.QP} Details`}</Divider>
                         <Form.Field control={Input} label="Title" name="title" placeholder="Title" id="title-field" onChange={this.handleInputChange} />
-                            <Form.Group inline>
-                                <label>Submission Type:</label>
-                                <Form.Field control={Radio} label='Question' value='Question' checked={this.state.QP === 'Question'} onChange={this.handleQPChange} />
-                                <Form.Field control={Radio} label='Post' value='Post' checked={this.state.QP === 'Post'} onChange={this.handleQPChange} />
-                            </Form.Group>
                         
                             <Form.Field control={TextArea} label="Description" name="body" id="description-field" onChange={this.handleInputChange} />
                         

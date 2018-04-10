@@ -52,7 +52,13 @@ export default class Home extends Component  {
                 </Grid.Column>
                 <Grid.Column width={3} only="tablet computer">
                   <Divider horizontal>T A G S</Divider>
-                  <Tag>test</Tag>
+                   <Tag>landscape</Tag>
+                   <Tag>nature</Tag>
+                   <Tag>lowLight</Tag>
+                   <Tag>motion</Tag>
+                   <Tag>film</Tag>
+                   <Tag>beach</Tag>
+                   <Tag>portraits</Tag>
                 </Grid.Column>
                 <Grid.Column mobile={3} only="mobile" className={"social-media-icons"}>
                   <Divider horizontal>
