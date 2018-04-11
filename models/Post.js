@@ -9,7 +9,7 @@ const PostSchema = new Schema({
   QP: {
     type: String
   },
-  img_filename:{
+  img_url:{
     type: String
   },
   aperture:{

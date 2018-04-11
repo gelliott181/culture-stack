@@ -17,7 +17,12 @@ export default class CreatePost extends Component {
         title: "",
         QP: "",
         body: "",
-        tags: []
+        tags: [],
+        sessionUser: null
+    }
+
+    componentWillMount = () => {
+        this.setState({sessionUser: JSON.parse(sessionStorage.getItem('user'))});
     }
 
     handleInputChange = event => {
@@ -25,6 +30,7 @@ export default class CreatePost extends Component {
         this.setState({
             [name]: value
         });
+        console.log(this.state);
     };
 
     handleFileChange = event => {
@@ -50,6 +56,7 @@ export default class CreatePost extends Component {
             formData.append("body", this.state.body);
             formData.append("tags", this.state.tags);
             formData.append("img_file", this.state.img_file);
+            formData.append("author", this.state.sessionUser.id);
             
             API.uploadImage(formData)
             .then(res => {

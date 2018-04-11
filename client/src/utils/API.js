@@ -6,5 +6,11 @@ export default {
     },
     getPost(id){
         return axios.get("/api/posts/" + id);
+    },
+    getPosts(){
+        return axios.get("/api/posts");
+    },
+    getUser(id){
+        return axios.get("/api/users" + id);
     }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Grid, Container, Image, Divider, Item, Icon, Button, Segment, Header, Card } from "semantic-ui-react";
 import { Tag } from '../components/Tag';
-import UserCard from '../components/UserCard';
+import UserCard from '../components/PostCard';
 import RegisterModal from '../components/RegisterModal';
 import SignInModal from '../components/SignInModal';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
