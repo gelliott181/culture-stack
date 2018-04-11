@@ -10,7 +10,8 @@ export default class SignInModal extends Component {
     username: null,
     password: null,
     error: null,
-    redirect: false
+    redirect: false,
+    modalOpen: false
   }
 
   handleInputChanged = (event) => {
@@ -64,6 +65,11 @@ export default class SignInModal extends Component {
       });
     });
   }
+
+  handleOpen = () => this.setState({ modalOpen: true })
+
+  handleClose = () => this.setState({ modalOpen: false })
+
   render() {
     const { error } = this.state;
 
@@ -71,8 +77,11 @@ export default class SignInModal extends Component {
 
       <Modal size="small" trigger={
         // <Button size="huge">Sign In</Button>
-      <Menu.Item >Sign In</Menu.Item>
-      }>
+      <Menu.Item onClick={this.handleOpen}>Sign In</Menu.Item>
+      }
+        open={this.state.modalOpen}
+        onClose={this.handleClose}
+        >
 
         <Modal.Header>Sign In</Modal.Header>
         <Modal.Content>
@@ -118,7 +127,7 @@ export default class SignInModal extends Component {
             </Grid.Column>
             <Grid.Column verticalAlign="middle" textAlign="center">
               <Header as="h2">
-              <Link to="/register">Sign Up!</Link>
+              <Link to="/register" onClick={this.handleClose}>Sign Up!</Link>
               </Header>
             </Grid.Column>
           </Grid>
