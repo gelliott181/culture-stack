@@ -46,7 +46,7 @@ const UserSchema = new Schema({
   occupation: {
     type: String
   },
-  description: {
+ bio: {
     type: String
   },
   posts: [{
@@ -104,16 +104,3 @@ UserSchema.methods.validatePassword = function (candidatePassword) {
 const User = mongoose.model("User", UserSchema);
 
 module.exports = User;
-
-/*
-Username
-Password
-First Name
-Last Name
-Avatar
-Email
-Score
-Occupation
-Description
-
-*/

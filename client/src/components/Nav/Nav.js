@@ -28,6 +28,7 @@ export default class Nav extends Component {
   };
   
   componentDidMount = () => {
+    sessionUser: JSON.parse(sessionStorage.getItem('user'));
     console.log(this.state.sessionUser);
   }
 
@@ -64,7 +65,7 @@ export default class Nav extends Component {
           {this.state.sessionUser ? (
           
           <Menu.Item as={Link} to="/dashboard" name={this.state.sessionUser.username} active={activeItem === ""} onClick={this.handleItemClick} />
-          
+
           ) : (
           <SignInModal callbackSessionChange={this.handleSessionChange} />
           )}

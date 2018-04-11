@@ -8,8 +8,6 @@ const router = require("express").Router();
 // /api in front of each route.
 router.use('/api', require('./auth'));
 router.use('/api', require('./posts'));
-
-// add HTML routes to current router
-// router.use(require('./htmlRoutes'));
+router.use('/api', require('./users'));
 
 module.exports = router;

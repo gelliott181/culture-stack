@@ -16,7 +16,10 @@ import Dashboard from "./pages/Dashboard"
 import User from "./pages/User";
 import NotFoundPage from './pages/NotFoundPage';
 import UserRegistration from "./pages/UserRegistration";
+import NotLoggedIn from "./pages/NotLoggedIn";
 
+//Passport Protected Route
+import ProtectedRoute from './components/ProtectedRoute';
 
 class App extends Component {
   componentDidMount() {
@@ -44,11 +47,12 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route exact path="/home" component={Home} />
               <Route exact path="/register" component={UserRegistration} />
-              <Route exact path="/create" component={CreatePost} />
-              <Route exact path="/dashboard" component={Dashboard} />
-              <Route exact path="/user" component={User} />
+              <ProtectedRoute exact path="/create" component={CreatePost} />
+              <Route exact path="/login" component={NotLoggedIn} />
+              <Route exact path="/dashboard" component={User} />
+              <Route exact path="/user/:userid" component={User} />
               <Route exact path="/browse" component={Browse} />
-              <Route exact path="/post=:postid" component={ViewPost} />
+              <Route exact path="/posts/:postid" component={ViewPost} />
               <Route component={NotFoundPage} />
             </Switch>
         </div>
