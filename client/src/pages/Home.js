@@ -6,11 +6,19 @@ import RegisterModal from '../components/RegisterModal';
 import SignInModal from '../components/SignInModal';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
+const homeBackgroundHero = {
+  backgroundImage: "url('img/default_home.jpeg')",
+  backgroundSize: "cover"
+}
+
+const letterSpace = {
+    letterSpacing: '6px',
+    fontWeight: 'bold'
+}
 
 export default class Home extends Component  {
     render () {
-        return <Container>
-            <Grid stackable>
+        return <Grid  container fluid stackable>
               <Grid.Row>
                 <Grid.Column computer={3} only="tablet computer" className={"social-media-icons"}>
                   <Divider horizontal>
@@ -39,8 +47,7 @@ export default class Home extends Component  {
                   <Divider horizontal>F E E D</Divider>
                   <div className={"hero"}>
                     <Image src={"img/default_home.jpeg"} fluid />
-                  </div>
-                  <Segment textAlign="center" basic>
+                      <Segment textAlign="center" basic>
                     <Header as="h2">CULTURE STACK</Header>
                     <p className={"secondary-font"}>
                       Share your photos and music. Learn and
@@ -48,6 +55,7 @@ export default class Home extends Component  {
                     </p>
                   <Button size='big'><Link to="/register">Register</Link></Button>
                   </Segment>
+                  </div>
                 </Grid.Column>
                 <Grid.Column width={3} only="tablet computer">
                   <Divider horizontal>T A G S</Divider>
@@ -82,40 +90,13 @@ export default class Home extends Component  {
                     </span>
                   </div>
                 </Grid.Column>
-              </Grid.Row>
-            </Grid>
             <div>
               <Divider horizontal>
                 <Icon name="angle down" size="big" />
               </Divider>
             </div>
-            <Grid>
-              <Grid.Column mobile={16} tablet={8} computer={4}>
-              <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={8} computer={4}>
-              <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={8} computer={4}>
-              <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={8} computer={4}>
-              <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={8} computer={4}>
-              <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={8} computer={4}>
-              <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={8} computer={4}>
-              <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={8} computer={4}>
-              <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-              </Grid.Column>
+              </Grid.Row>
             </Grid>
-          </Container>;
     }
 }
 

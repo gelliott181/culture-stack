@@ -40,7 +40,6 @@ class App extends Component {
     return (
         <div className={"background-color: #FFFBF8"}>
           <Nav history />
-          <Container className={"content"}>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/home" component={Home} />
@@ -52,7 +51,6 @@ class App extends Component {
               <Route exact path="/post=:postid" component={ViewPost} />
               <Route component={NotFoundPage} />
             </Switch>
-          </Container>
         </div>
     )
   }

@@ -23,6 +23,7 @@ body {
     flex-wrap: wrap;
 }
 
+.nav-
 
 .background-color {
    background-color: #FFFBF8;
@@ -70,7 +71,7 @@ body {
 }
 
 .nav-body-margin {
-    margin-top: 15px;
+    margin-top: 25px;
 }
 
 .card {
