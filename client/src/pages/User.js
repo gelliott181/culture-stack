@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Container, Segment, Grid, Image, Divider, TextArea, Form, List, Icon } from "semantic-ui-react";
+import UserCard from '../components/UserCard';
 
 export default class User extends Component {
     render() {
@@ -9,10 +10,10 @@ export default class User extends Component {
                 <Divider horizontal />
                 <Segment>
                     <Grid columns={"2"}>
-                        <Grid.Column>
+                        <Grid.Column mobile={16} tablet={9} computer={8}>
                             <Image src="img/default_avatar.jpg" size="medium" avatar />
                         </Grid.Column>
-                        <Grid.Column>
+                        <Grid.Column mobile={16} tablet={9} computer={8}>
                             <Divider horizontal>
                                 <h2>NAME</h2>
                             </Divider>
@@ -52,12 +53,35 @@ export default class User extends Component {
                                                 <Icon name="link" /> website.com
                           </List.Item>
                                         </List>
-                                    </Grid.Column>
+                                    </Grid.Column> 
                                 </Grid>
                             </Container>
                         </Grid.Column>
                     </Grid>
                 </Segment>
+                 <Grid>
+                            <Grid.Column mobile={16} tablet={8} computer={4}>
+                                <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                            </Grid.Column>
+                            <Grid.Column mobile={16} tablet={8} computer={4}>
+                                <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                            </Grid.Column>
+                             <Grid.Column mobile={16} tablet={8} computer={4}>
+                                <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                            </Grid.Column>
+                            <Grid.Column mobile={16} tablet={8} computer={4}>
+                                <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                            </Grid.Column>
+                            <Grid.Column mobile={16} tablet={8} computer={4}>
+                                <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                            </Grid.Column>
+                            <Grid.Column mobile={16} tablet={8} computer={4}>
+                                <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                            </Grid.Column>
+                             <Grid.Column mobile={16} tablet={8} computer={4}>
+                                <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                            </Grid.Column>
+                </Grid>
             </Container>
         );
     }

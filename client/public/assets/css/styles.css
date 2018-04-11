@@ -2,9 +2,27 @@ html, body {
     height: 100%;
 }
 
+.logo-centered--Mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-centered--Mobile h1 {
+    margin-top: 
+
+}
+
 body {
    background-color: #FFFBF8;
 }
+
+.nav-collapsable-rows {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 
 .background-color {
    background-color: #FFFBF8;
@@ -51,11 +69,16 @@ body {
     align-items: center;
 }
 
+.nav-body-margin {
+    margin-top: 15px;
+}
 
 .card {
     background-color: #30D5C8;
 
 }
+
+
 .ui .card {
     margin: auto;
     margin-top: 25px;
@@ -91,3 +114,6 @@ body {
         margin-top: -120px;
     }
 }
+
+
+

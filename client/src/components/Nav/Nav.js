@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import {Link, Redirect} from "react-router-dom";
 import history from '../../history.js'
 import axios from "axios";
-import { Menu, Input, Image } from 'semantic-ui-react';
+import { Menu, Input, Image, Divider } from 'semantic-ui-react';
 import SignInModal from "../SignInModal";
 
 
@@ -11,14 +11,14 @@ const styles = {
     background: "#2d2b2d"
   },
   zeromp: {
-    margin: 0,
-    padding: 0
+    marginTop: '-65px',
+    padding: '0'
   },
   letterSpace: {
     letterSpacing: '6px',
     fontWeight: 'bold'
   }
-};
+}
 
 export default class Nav extends Component {
   state = {
@@ -49,18 +49,18 @@ export default class Nav extends Component {
     const { activeItem } = this.state;
 
     return <div>
-
         <Menu attached="top" stackable inverted style={styles.navColor}>
-          <div>
-            <Image src={"/img/branding.png"} size="tiny" />
-          </div>
-          <h1 style={Object.assign({}, styles.letterSpace, styles.zeromp)}><Menu.Item name="CULTURE STACK"/></h1>
-
+        <div className="logo-centered--Mobile box-shadow-img{">
+          <Image src={"/img/branding.png"} size="tiny"/>
+          <h1 style={Object.assign({}, styles.letterSpace, styles.zeromp)}><Menu.Item name="CULTURE STACK" /></h1>
+        </div>  
+        <div className="secondary-font nav-collapsable-rows">
           <Menu.Item as={Link} to="/" name="home" active={activeItem === "home"} onClick={this.handleItemClick} />
           <Menu.Item as={Link} to="/browse" name="browse posts" active={activeItem === "browse posts"} onClick={this.handleItemClick} />
           <Menu.Item as={Link} to ="/create" name="submit a post" active={activeItem === "submit a post"} onClick={this.handleItemClick} />
+          </div>
           <Menu.Menu position="right">
-          
+    
           {this.state.sessionUser ? (
           
           <Menu.Item as={Link} to="/dashboard" name={this.state.sessionUser.username} active={activeItem === ""} onClick={this.handleItemClick} />
@@ -74,6 +74,7 @@ export default class Nav extends Component {
 
           </Menu.Menu>
         </Menu>
-      </div>;
-  }
+        <div className="nav-body-margin"></div>
+      </div>
+  }   
 }

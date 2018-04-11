@@ -4,6 +4,8 @@ import { Tag } from '../components/Tag';
 import UserCard from '../components/UserCard';
 import RegisterModal from '../components/RegisterModal';
 import SignInModal from '../components/SignInModal';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+
 
 export default class Home extends Component  {
     render () {
@@ -44,10 +46,7 @@ export default class Home extends Component  {
                       Share your photos and music. Learn and
                       collaborate. Join the culture today.
                     </p>
-                    <RegisterModal
-                      history = {this.props.history}  
-                    />
-                    <SignInModal />
+                  <Button size='big'><Link to="/register">Register</Link></Button>
                   </Segment>
                 </Grid.Column>
                 <Grid.Column width={3} only="tablet computer">

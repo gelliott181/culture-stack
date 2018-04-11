@@ -65,7 +65,7 @@ export default class CreatePost extends Component {
 
             <Grid.Column>
                 <Divider horizontal>
-                    <Header as="h1">SUBMIT A POST</Header>
+                    <Header as="h1">SUBMIT A PHOTO</Header>
                 </Divider>
                     <Image src="./img/default_placeholder.png" />
                 
@@ -81,7 +81,7 @@ export default class CreatePost extends Component {
                     <Divider hidden />
                       <Divider horizontal>
                        <Button.Group>
-                                <Button color="yellow" onClick={this.handleQPChange}>Question</Button>
+                                <Button color="gray" onClick={this.handleQPChange}>Question</Button>
                                 <Button.Or />
                                 <Button color="pink"  onClick={this.handleQPChange}>Post</Button>
                         </Button.Group>
