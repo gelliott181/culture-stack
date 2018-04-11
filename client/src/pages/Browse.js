@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from "react";
 import {tagOptions} from "../common/";
 import { Grid, Container, Image, Divider, Item, Icon, Button, Segment, Header, Card, Label } from "semantic-ui-react"; 
-import UserCard from "../components/UserCard";
+import PostCard from "../components/PostCard";
 import API from "../utils/API";
 
 const tagList = tagOptions;
@@ -48,7 +48,7 @@ export default class Browse extends Component  {
                 <Grid.Column mobile={16} tablet={12} computer={12}><Divider horizontal>#{this.state.browseFilter}</Divider>
                     <Card.Group itemsPerRow={3}>
                     {this.state.posts.map(post => (
-                        <UserCard name={post.title} author="chomsey1" postImage={`https://s3.amazonaws.com/culturestack-user-submitted/${post._id}.jpg`} userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                        <PostCard name={post.title} author="chomsey1" postImage={`https://s3.amazonaws.com/culturestack-user-submitted/${post._id}.jpg`} userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
                         
                     ))}
                     </Card.Group>
@@ -86,22 +86,22 @@ export default class Browse extends Component  {
                 </Grid.Row>
                 <Grid.Row>
                     <Grid.Column mobile={16} tablet={4} computer={4}>
-                    <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-                    <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-                    <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />                
-                    <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                    <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                    <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                    <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />                
+                    <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
                 </Grid.Column>
                 <Grid.Column mobile={16} tablet={4} computer={4}>
-                    <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-                    <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-                    <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />                
-                    <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                    <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                    <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                    <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />                
+                    <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
                 </Grid.Column>
                 <Grid.Column mobile={16} tablet={4} computer={4}>
-                    <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-                    <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-                    <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />                
-                    <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                    <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                    <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                    <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />                
+                    <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
                 </Grid.Column>
                     <Grid.Column only="table computer"tablet={4} computer={4}>
                     <button name="tag" onClick={this.handleTagChange}>TEST</button>
