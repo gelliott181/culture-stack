@@ -12,7 +12,8 @@ import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Browse from "./pages/Browse";
-import User from "./components/User";
+import Dashboard from "./pages/Dashboard"
+import User from "./pages/User";
 import NotFoundPage from './pages/NotFoundPage';
 import UserRegistration from "./pages/UserRegistration";
 import NotLoggedIn from "./pages/NotLoggedIn";
@@ -40,9 +41,8 @@ class App extends Component {
   }
   render() {
     return (
-        <div>
+        <div className={"background-color: #FFFBF8"}>
           <Nav history />
-          <Container className={"content"}>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/home" component={Home} />
@@ -55,7 +55,6 @@ class App extends Component {
               <Route exact path="/posts/:postid" component={ViewPost} />
               <Route component={NotFoundPage} />
             </Switch>
-          </Container>
         </div>
     )
   }

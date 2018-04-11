@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
-import { Grid, Divider, Header, Image, Form, Input, Radio, Dropdown, TextArea, Button, Comment, Segment, Icon, Statistic, Popup } from 'semantic-ui-react';
+import { Grid, Divider, Header, Image, Form, Input, Radio, Dropdown, TextArea, Button, Comment, Segment, Icon, Statistic, Popup, Container} from 'semantic-ui-react';
 import { tagOptions } from '../common';
 import API from "../utils/API";
 
 
 export default class ViewPost extends Component {
 
-state = {
-    post: {}
-}
 
 componentDidMount() {
     API.getPost(this.props.match.params.postid)
@@ -21,22 +18,16 @@ componentDidMount() {
    
 
    return (
-        <Grid container stackable doubling>
-            <Grid.Row>
-               <Grid.Column mobile={16} tablet={4} computer={10}>
-                    <Divider horizontal>
-                        <Header as="h2">{this.state.post.title}</Header>
-                    </Divider>
-                    <Image src="../img/default_placeholder.png" size="huge"/>
+        <Grid container>
+            <Grid.Row stackable>
+               <Grid.Column mobile={16} tablet={10} computer={10} floated="left">
+                    <Divider hidden/>
+                    <Image className={"box-shadow-img"} src="../img/default_placeholder.png" size="huge"/>
                 </Grid.Column>
-        
-                <Grid.Column mobile={16} tablet={4} computer={6}>
-                   <Divider hidden><Statistic color="yellow" size="small"><Popup
-                       trigger={<Statistic.Value>Q</Statistic.Value>}
-                       content="This submission is a Question. Review the post details below, and feel free to leave an answer!"
-                       basic/></Statistic></Divider>
-                   <Header as="h3" textAlign="center">PHOTO DETAILS</Header>
-                       <Segment.Group horizontal>
+                <Grid.Column mobile={16} tablet={6} computer={6} floated="left">
+                   <Divider horizontal><Header as="h3" textAlign="center" color="yellow">Question</Header></Divider>
+                   <Header as="h4" textAlign="center">POST TITLE</Header>
+                        <Segment.Group>
                             <Segment textAlign="center">
                                 <Header as="h5">Aperature</Header>
                                     Data
@@ -50,14 +41,25 @@ componentDidMount() {
                                     Data
                             </Segment>
                         </Segment.Group>
+                       <Header as="h4" textAlign="center">GEAR</Header>
                        <Segment.Group vertical>
                            <Segment textAlign="center"><Icon name="camera"></Icon>Camera</Segment>
                            <Segment textAlign="center"><Icon name="camera retro"></Icon>Lens</Segment>
-                       </Segment.Group>
+                       </Segment.Group> 
+                </Grid.Column>  
+               </Grid.Row>
+               <Grid.Row>
+                <Grid.Column mobile={16} tablet={16} computer={6} floated="right">
+                    <div className={"negative-margin-column"}>
+                        <Header as="h5" textAlign="center">DESCRIPTION</Header>
+                        <Segment fluid>
+                            <p>This is text and aegiaetioae a odaigadsgohdg opidjg poihdasg poihsdg poiashdg poiajsdg poihadg poihdgasdghasdgoiasdgoiajdg oiajdgpoiadghapodihg</p>
+                        </Segment>   
+                    </div>
                 </Grid.Column>
-            </Grid.Row>
+               </Grid.Row>
             <Grid.Row>
-               <Grid.Column mobile={16} tablet={4} computer={12}>
+               <Grid.Column mobile={16} tablet={12} computer={12}>
                    <Comment.Group fluid>
                        <Header as='h3' dividing>Comments</Header>
 
@@ -122,13 +124,11 @@ componentDidMount() {
                 </Comment.Group>
                    <Form reply>
                        <Form.TextArea />
-                       <Button content='Comment' labelPosition='left' icon='edit' primary />
+                       <Button content='Comment' labelPosition='left' icon='edit' primary style={{backgroundColor: "#2688FF"}} />
                    </Form>
                 </Grid.Column>
             </Grid.Row>
         </Grid>
-        
-     
         );
     }
 }

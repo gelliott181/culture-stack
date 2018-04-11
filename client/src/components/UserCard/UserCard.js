@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Card, Image, Grid } from 'semantic-ui-react';
 import {Link} from "react-router-dom";
 
-
 export default class UserCard extends React.Component {
   
   render(props) {
@@ -59,3 +58,4 @@ export default class UserCard extends React.Component {
     )
   };
 }
+
