@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Segment, Grid, Image, Divider, TextArea, Form, List, Icon } from "semantic-ui-react";
-import UserCard from '../components/UserCard';
+import PostCard from '../components/PostCard';
 
 export default class User extends Component {
     render() {
@@ -61,25 +61,25 @@ export default class User extends Component {
                 </Segment>
                  <Grid>
                             <Grid.Column mobile={16} tablet={8} computer={4}>
-                                <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                                <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
                             </Grid.Column>
                             <Grid.Column mobile={16} tablet={8} computer={4}>
-                                <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                                <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
                             </Grid.Column>
                              <Grid.Column mobile={16} tablet={8} computer={4}>
-                                <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                                <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
                             </Grid.Column>
                             <Grid.Column mobile={16} tablet={8} computer={4}>
-                                <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                                <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
                             </Grid.Column>
                             <Grid.Column mobile={16} tablet={8} computer={4}>
-                                <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                                <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
                             </Grid.Column>
                             <Grid.Column mobile={16} tablet={8} computer={4}>
-                                <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                                <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
                             </Grid.Column>
                              <Grid.Column mobile={16} tablet={8} computer={4}>
-                                <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                                <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
                             </Grid.Column>
                 </Grid>
             </Container>

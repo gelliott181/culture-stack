@@ -12,7 +12,7 @@ import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Browse from "./pages/Browse";
-import Dashboard from "./pages/Dashboard"
+import Dashboard from "./pages/Dashboard";
 import User from "./pages/User";
 import NotFoundPage from './pages/NotFoundPage';
 import UserRegistration from "./pages/UserRegistration";
@@ -49,7 +49,7 @@ class App extends Component {
               <Route exact path="/register" component={UserRegistration} />
               <ProtectedRoute exact path="/create" component={CreatePost} />
               <Route exact path="/login" component={NotLoggedIn} />
-              <Route exact path="/dashboard" component={User} />
+              <Route exact path="/dashboard" component={Dashboard} />
               <Route exact path="/user/:userid" component={User} />
               <Route exact path="/browse" component={Browse} />
               <Route exact path="/posts/:postid" component={ViewPost} />
