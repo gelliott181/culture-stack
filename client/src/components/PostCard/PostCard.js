@@ -8,7 +8,7 @@ export default class PostCard extends React.Component {
   render(props) {
 
     const imageStyle = {
-      backgroundImage: "url("+this.props.postImage+")",
+      backgroundImage: "url("+this.props.img_url+")",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
       backgroundPosition: "center",
@@ -41,16 +41,16 @@ export default class PostCard extends React.Component {
       <Card fluid>
         <Card.Content>
           <Image floated="left" size="mini" src={this.props.userAvatar} circular />
-          <Card.Header>{this.props.name}</Card.Header>
+          <Card.Header as={Link} to={this.props.post_url}>{this.props.name}</Card.Header>
 
           {/* When ready, this should link to {`/user/${this.props.author._id}`} */}
-          <Card.Meta as={Link} to={`/user`}>{this.props.author}</Card.Meta>
+          <Card.Meta as={Link} to={this.props.author_url}>{this.props.author}</Card.Meta>
         </Card.Content>
         {/* <div style={ wrapStyle }>
           <img style={imgStyle} src={this.props.postImage} />
         </div> */}
 
-        <div style={ imageStyle }></div>
+        <Link to={this.props.post_url}><div style={ imageStyle }></div></Link>
         <Card.Content>
           <Card.Description>{this.props.description}</Card.Description>
         </Card.Content>

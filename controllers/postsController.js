@@ -27,6 +27,13 @@ module.exports = {
                     let fileExtension = file.name.substr(file.name.lastIndexOf('.') + 1);
                     // Rename the file to the Post._id with the extension appended.
                     file.name = dbModel._id.toString() + "." + fileExtension;
+                    let fileUrl = "https://s3.amazonaws.com/culturestack-user-submitted/" + file.name;
+
+                    db.Post
+                        .findByIdAndUpdate(dbModel._id, {img_url: fileUrl}, (err, post)=> {
+                            if (err) return res.status(500).send(err);
+                        })
+
                     console.log(file);
                     uploadToS3(file);
                     
@@ -40,6 +47,7 @@ module.exports = {
     findAll : (req, res) => {
         db.Post
             .find(req.query)
+            .populate('author')
             .sort({ date: -1 })
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));

@@ -20,7 +20,6 @@ export default class Browse extends Component  {
     loadPosts = () => {
         API.getPosts()
         .then(res => {
-            console.log(res.data);
             this.setState({ posts: res.data })
         })
         .catch(err => console.log(err));
@@ -32,6 +31,7 @@ export default class Browse extends Component  {
             browseFilter: event.target.name
         });
         console.log(this.state.browseFilter);
+        console.log(this.state.posts);
     }
  
     render() {
@@ -48,7 +48,7 @@ export default class Browse extends Component  {
                 <Grid.Column mobile={16} tablet={12} computer={12}><Divider horizontal>#{this.state.browseFilter}</Divider>
                     <Card.Group itemsPerRow={3}>
                     {this.state.posts.map(post => (
-                        <PostCard name={post.title} author="chomsey1" postImage={`https://s3.amazonaws.com/culturestack-user-submitted/${post._id}.jpg`} userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                        <PostCard key={post._id} post_url={`/posts/${post._id}`} name={post.title} author={post.author.username} author_url={`/user/${post.author._id}`} img_url={post.img_url} userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
                         
                     ))}
                     </Card.Group>
