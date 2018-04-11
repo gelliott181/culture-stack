@@ -86,28 +86,7 @@ export default class Home extends Component  {
             </div>
             <Grid>
               <Grid.Column mobile={16} tablet={8} computer={4}>
-              <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={8} computer={4}>
-              <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={8} computer={4}>
-              <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={8} computer={4}>
-              <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={8} computer={4}>
-              <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={8} computer={4}>
-              <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={8} computer={4}>
-              <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-              </Grid.Column>
-              <Grid.Column mobile={16} tablet={8} computer={4}>
-              <UserCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+             
               </Grid.Column>
             </Grid>
           </Container>;
