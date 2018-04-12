@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Menu, Divider, Container, Segment, Sticky } from 'semantic-ui-react';
+import { Segment } from 'semantic-ui-react';
+
 
 
 export default class Footer extends Component {
