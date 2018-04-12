@@ -12,5 +12,9 @@ export default {
     },
     getUser(id){
         return axios.get("/api/users" + id);
+    },
+    createComment(postId, comment){
+        console.log(comment);
+        return axios.post("/api/comments/" + postId, comment);
     }
 }

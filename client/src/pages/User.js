@@ -28,13 +28,13 @@ export default class User extends Component {
                                         <List>
                                             <List.Item>
                                                 <Icon name="camera retro" />Camera
-                                </List.Item>
+                                            </List.Item>
                                             <List.Item>
                                                 <Icon name="photo" />Lens
-                          </List.Item>
+                                            </List.Item>
                                             <List.Item>
                                                 <Icon name="certificate" />Style
-                          </List.Item>
+                                            </List.Item>
                                         </List>
                                     </Grid.Column>
                                     <Grid.Column>
@@ -42,16 +42,16 @@ export default class User extends Component {
                                         <List>
                                             <List.Item>
                                                 <Icon name="users" /> Company
-                          </List.Item>
+                                            </List.Item>
                                             <List.Item>
                                                 <Icon name="marker" /> Location
-                          </List.Item>
+                                            </List.Item>
                                             <List.Item>
                                                 <Icon name="mail" /> email@email.com
-                          </List.Item>
+                                            </List.Item>  
                                             <List.Item>
                                                 <Icon name="link" /> website.com
-                          </List.Item>
+                                            </List.Item>
                                         </List>
                                     </Grid.Column> 
                                 </Grid>
@@ -59,29 +59,6 @@ export default class User extends Component {
                         </Grid.Column>
                     </Grid>
                 </Segment>
-                 <Grid>
-                            <Grid.Column mobile={16} tablet={8} computer={4}>
-                                <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-                            </Grid.Column>
-                            <Grid.Column mobile={16} tablet={8} computer={4}>
-                                <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-                            </Grid.Column>
-                             <Grid.Column mobile={16} tablet={8} computer={4}>
-                                <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-                            </Grid.Column>
-                            <Grid.Column mobile={16} tablet={8} computer={4}>
-                                <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-                            </Grid.Column>
-                            <Grid.Column mobile={16} tablet={8} computer={4}>
-                                <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-                            </Grid.Column>
-                            <Grid.Column mobile={16} tablet={8} computer={4}>
-                                <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-                            </Grid.Column>
-                             <Grid.Column mobile={16} tablet={8} computer={4}>
-                                <PostCard name="Test" userImage="/img/default_placeholder.png" userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-                            </Grid.Column>
-                </Grid>
             </Container>
         );
     }
