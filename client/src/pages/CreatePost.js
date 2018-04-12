@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import history from "../history";
 import { Grid, Divider, Header, Image, Form, Input, Radio, Dropdown, TextArea, Button } from 'semantic-ui-react';
 
 import { tagOptions } from '../common';
@@ -17,8 +18,7 @@ export default class CreatePost extends Component {
         title: "",
         QP: "",
         body: "",
-        tags: [],
-        sessionUser: null
+        tags: []
     }
 
     componentWillMount = () => {
@@ -30,16 +30,21 @@ export default class CreatePost extends Component {
         this.setState({
             [name]: value
         });
-        console.log(this.state);
     };
 
     handleFileChange = event => {
         this.setState({img_file: event.target.files[0]});
     };
 
-    handleQPChange = (event, { value }) => this.setState({ QP: value });
+    handleQPChange = (event, { name }) => {
+        this.setState({ QP: name })
+    };
 
     handleTagsChange = (event, { value }) => this.setState({ tags: value });
+
+    handlePostRedirect = (id) => {
+        
+    }
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -60,7 +65,20 @@ export default class CreatePost extends Component {
             
             API.uploadImage(formData)
             .then(res => {
-                this.setState({img_file: null});
+                this.setState({
+                    img_file: null,
+                    aperture: "",
+                    iso: "",
+                    speed: "",
+                    camera: "",
+                    lens: "",
+                    title: "",
+                    QP: "",
+                    body: "",
+                    tags: [],
+                    sessionUser: null
+                });
+                history.push(`/posts/${res.data._id}`);
             })
             .catch(err => console.log(err));
         }
@@ -88,9 +106,9 @@ export default class CreatePost extends Component {
                     <Divider hidden />
                       <Divider horizontal>
                        <Button.Group>
-                                <Button color="gray" onClick={this.handleQPChange}>Question</Button>
+                                <Button color="gray" name="Question" onClick={this.handleQPChange}>Question</Button>
                                 <Button.Or />
-                                <Button color="pink"  onClick={this.handleQPChange}>Post</Button>
+                                <Button color="pink" name="Post" onClick={this.handleQPChange}>Post</Button>
                         </Button.Group>
                         </Divider>
                     <Divider horizontal>Photo Details</Divider>

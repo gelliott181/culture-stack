@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Link, Redirect} from "react-router-dom";
-import history from '../../history.js'
+import history from '../../history.js';
 import axios from "axios";
 import { Menu, Input, Image, Divider } from 'semantic-ui-react';
 import SignInModal from "../SignInModal";
@@ -64,7 +64,7 @@ export default class Nav extends Component {
     
           {this.state.sessionUser ? (
           
-          <Menu.Item as={Link} to="/dashboard" name={this.state.sessionUser.username} active={activeItem === ""} onClick={this.handleItemClick} />
+          <Menu.Item as={Link} to={`/users/${this.state.sessionUser.id}`} name={this.state.sessionUser.username} active={activeItem === ""} onClick={this.handleItemClick} />
 
           ) : (
           <SignInModal callbackSessionChange={this.handleSessionChange} />
