@@ -1,5 +1,5 @@
 import React from "react";
-import { Item, Divider } from "semantic-ui-react";
+import { Item } from "semantic-ui-react";
 
 export const Tag = ({children}) => (
 
