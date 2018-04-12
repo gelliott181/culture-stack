@@ -13,7 +13,7 @@ export default class Browse extends Component  {
         posts: []
     }
 
-    componentDidMount() {
+    componentDidMount = () => {
         this.loadPosts();
     }
 
@@ -48,7 +48,7 @@ export default class Browse extends Component  {
                 <Grid.Column mobile={16} tablet={12} computer={12}><Divider horizontal>#{this.state.browseFilter}</Divider>
                     <Card.Group itemsPerRow={3}>
                     {this.state.posts.map(post => (
-                        <PostCard key={post._id} post_url={`/posts/${post._id}`} name={post.title} author={post.author.username} author_url={`/user/${post.author._id}`} img_url={post.img_url} userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                        <PostCard key={post._id} post_url={`/posts/${post._id}`} name={post.title} author={post.author.username} author_url={`/users/${post.author._id}`} img_url={post.img_url} userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
                         
                     ))}
                     </Card.Group>
