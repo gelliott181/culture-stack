@@ -2,7 +2,9 @@
   "name": "culture-stack",
   "version": "1.0.0",
   "engines": {
-    "node": "8.9.3"
+    "node": "8.9.x",
+    "npm": "5.5.x",
+    "yarn": "1.5.x"
   },
   "description": "",
   "main": "server.js",

@@ -14,4 +14,3 @@ import { Segment } from 'semantic-ui-react';
 
 //     }
 // }
-
