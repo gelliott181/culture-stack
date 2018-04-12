@@ -11,7 +11,7 @@ export default {
         return axios.get("/api/posts");
     },
     getUser(id){
-        return axios.get("/api/users" + id);
+        return axios.get("/api/users/" + id);
     },
     createComment(postId, comment){
         console.log(comment);
