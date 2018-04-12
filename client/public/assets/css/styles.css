@@ -89,13 +89,20 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.sticky-footer {
+    position: absolute;
+    margin-top: 15px;
+    width: 100%;
+    bottom: 1;
+}
+
 /* // Semantic UI modal position fix */
 .ui.active.dimmer.modals.transition {
     display: flex !important;
     display: -ms-flexbox !important;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 800px) {
 
     .shrink-header-font {
         font-size: .5em;

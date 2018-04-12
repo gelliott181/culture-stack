@@ -8,7 +8,7 @@ import SignInModal from "../SignInModal";
 
 const styles = {
   navColor: {
-    background: "#2d2b2d"
+    background: "#2d2b2d",
   },
   zeromp: {
     marginTop: '-65px',
@@ -50,7 +50,7 @@ export default class Nav extends Component {
     const { activeItem } = this.state;
 
     return <div>
-        <Menu attached="top" stackable inverted style={styles.navColor}>
+        <Menu attached="top" stackable inverted style={styles.navColor} borderless>
         <div className="logo-centered--Mobile box-shadow-img{">
           <Image src={"/img/branding.png"} size="tiny"/>
           <h1 style={Object.assign({}, styles.letterSpace, styles.zeromp)}><Menu.Item name="CULTURE STACK" /></h1>

@@ -42,7 +42,7 @@ class App extends Component {
   }
   render() {
     return (
-        <div className={"background-color: #FFFBF8"}>
+        <div style={{backgroundColor: "#FFFBF8"}}>
           <Nav history />
             <Switch>
               <Route exact path="/" component={Home} />
