@@ -50,10 +50,10 @@ export default class Home extends Component  {
     };
     
     render () {
-
-        return <Grid stackable> 
+ 
+        return <Grid stackable>
               <div fluid style={homeBackgroundHero}>
-                <Segment textAlign="center" basic style={{marginTop: "330px"}}>
+            <Segment textAlign="center" basic style={{ marginTop: "330px" }}>
                     <Header as="h2" inverted style={letterSpace}>CULTURE STACK</Header>
                     <p className={"secondary-font"}>
                       Share your photos. Learn and
@@ -80,7 +80,7 @@ export default class Home extends Component  {
               </Grid.Row>
               <Divider hidden></Divider>
               <Grid.Row>
-                <Grid.Column computer={4} only="tablet computer" className={"social-media-icons"}>
+                <Grid.Column computer={16} tablet={16} only="tablet computer" className={"social-media-icons"}>
                   <Divider hidden>
                     <Header as="h4" textAlign="center">
                       FIND THE CULTURE
@@ -104,12 +104,14 @@ export default class Home extends Component  {
                     </span>
                   </div>
                 </Grid.Column>
-                <Grid.Column width={12}><Divider hidden><Header as="h4" textAlign="center">DISCOVER</Header></Divider>
-                    <Card.Group itemsPerRow={3}>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column mobile={16} tablet={16} computer={16} style={{ margin: "10px"}}><Divider hidden><Header as="h4" textAlign="center">DISCOVER</Header></Divider>
+                <Divider hidden/><Divider hidden/>
+                     <Card.Group itemsPerRow={3} stackable>
                     {this.state.posts.map(post => (
-                        <PostCard key={post._id} post_url={`/posts/${post._id}`} name={post.title} author={post.author.username} author_url={`/user/${post.author._id}`} img_url={post.img_url} userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
-                        
-                    ))}
+                       <PostCard key={post._id} post_url={`/posts/${post._id}`} name={post.title} author={post.author.username} author_url={`/user/${post.author._id}`} img_url={post.img_url} userAvatar="img/default_avatar.jpg" description="description" extra="Extra" />
+                       ))}
                     </Card.Group>
                 </Grid.Column>
                 <Grid.Column mobile={4} only="mobile" className={"social-media-icons"}>
@@ -124,9 +126,9 @@ export default class Home extends Component  {
                     <Icon name="instagram" size="big" />
                   </div>
                   <Divider horizontal>
-                    <h4 className={"shrink-header-font"}>
+                    <Header as="h4" className={"shrink-header-font"}>
                       WHAT'S THE CULTURE?
-                    </h4>
+                    </Header>
                   </Divider>
                   <div className={"help-module"}>
                     <Image src={"/img/branding.png"} size="tiny" className="ui" />
@@ -137,6 +139,7 @@ export default class Home extends Component  {
                 </Grid.Column>
               </Grid.Row>
             </Grid>
+     
     }
 }
 

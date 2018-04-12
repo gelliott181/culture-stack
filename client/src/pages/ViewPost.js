@@ -96,16 +96,12 @@ export default class ViewPost extends Component {
                            <Segment textAlign="center"><Icon name="camera"></Icon>{this.state.post.camera}</Segment>
                            <Segment textAlign="center"><Icon name="camera retro"></Icon>{this.state.post.lens}</Segment>
                        </Segment.Group> 
-                </Grid.Column>
-               </Grid.Row>
-               <Grid.Row>
-                <Grid.Column mobile={16} tablet={16} computer={6} floated="right">
-                    <div className={"negative-margin-column"}>
-                        <Header as="h5" textAlign="center">DESCRIPTION</Header>
-                        <Segment fluid>
-                            <p>{this.state.post.body}</p>
-                        </Segment>   
-                    </div>
+                   <div className={"negative-margin-column"}>
+                       <Header as="h5" textAlign="center">DESCRIPTION</Header>
+                       <Segment fluid>
+                           <p>{this.state.post.body}</p>
+                       </Segment>
+                   </div>
                 </Grid.Column>
                </Grid.Row>
             <Grid.Row>
