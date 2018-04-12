@@ -51,7 +51,7 @@ class App extends Component {
               <ProtectedRoute exact path="/create" component={CreatePost} />
               <Route exact path="/login" component={NotLoggedIn} />
               <Route exact path="/dashboard" component={Dashboard} />
-              <Route exact path="/user/:userid" component={User} />
+              <Route exact path="/users/:userid" component={User} />
               <Route exact path="/browse" component={Browse} />
               <Route exact path="/posts/:postid" component={ViewPost} />
               <Route exact path="/logout" component={Logout} />

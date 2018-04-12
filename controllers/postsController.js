@@ -54,9 +54,9 @@ module.exports = {
     },
     
     findById : (req, res) => {
-        console.log(req.params.id)
         db.Post
             .findById(req.params.id)
+            .populate(['author', 'comments'])
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
