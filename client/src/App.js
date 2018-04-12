@@ -17,6 +17,7 @@ import User from "./pages/User";
 import NotFoundPage from './pages/NotFoundPage';
 import UserRegistration from "./pages/UserRegistration";
 import NotLoggedIn from "./pages/NotLoggedIn";
+import Logout from "./pages/Logout";
 
 //Passport Protected Route
 import ProtectedRoute from './components/ProtectedRoute';
@@ -53,6 +54,7 @@ class App extends Component {
               <Route exact path="/user/:userid" component={User} />
               <Route exact path="/browse" component={Browse} />
               <Route exact path="/posts/:postid" component={ViewPost} />
+              <Route exact path="/logout" component={Logout} />
               <Route component={NotFoundPage} />
             </Switch>
         </div>
