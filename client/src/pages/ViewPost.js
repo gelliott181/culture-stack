@@ -75,7 +75,7 @@ export default class ViewPost extends Component {
                     <Divider horizontal><Header as="h3" textAlign="center" color="yellow">{this.state.post.QP}</Header></Divider>
                     <Header as="h3" textAlign="center">
                         {this.state.post.title}
-                    <Header.Subheader>by <Link to={`/users/${this.state.author._id}`}>{this.state.QP}</Link></Header.Subheader>
+                    <Header.Subheader>by <Link to={`/users/${this.state.author._id}`}>{this.state.author.username}</Link></Header.Subheader>
                     </Header>
                         <Segment.Group>
                             <Segment textAlign="center">
