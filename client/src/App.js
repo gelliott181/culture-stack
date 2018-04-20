@@ -21,7 +21,6 @@ import Logout from "./pages/Logout";
 
 //Passport Protected Route
 import ProtectedRoute from './components/ProtectedRoute';
-
 class App extends Component {
   componentDidMount() {
     // this is going to double check that the user is still actually logged in

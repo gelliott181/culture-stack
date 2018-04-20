@@ -52,7 +52,6 @@ export default class PostCard extends Component {
 
         <Link to={this.props.post_url}><div style={ imageStyle }></div></Link>
         <Card.Content>
-          <Card.Description>{this.props.description}</Card.Description>
         </Card.Content>
       </Card>
     )
