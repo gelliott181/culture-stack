@@ -10,6 +10,7 @@ export default class CreatePost extends Component {
     
     state = {
         img_file: null,
+        img_preview: '',
         aperture: "",
         iso: "",
         speed: "",
@@ -22,7 +23,10 @@ export default class CreatePost extends Component {
     }
 
     componentWillMount = () => {
-        this.setState({sessionUser: JSON.parse(sessionStorage.getItem('user'))});
+        this.setState({
+            sessionUser: JSON.parse(sessionStorage.getItem('user')),
+            img_preview: "./img/default_placeholder.png"
+        });
     }
 
     handleInputChange = event => {
@@ -33,7 +37,19 @@ export default class CreatePost extends Component {
     };
 
     handleFileChange = event => {
-        this.setState({img_file: event.target.files[0]});
+        
+        let reader = new FileReader();
+        let img_file = event.target.files[0];
+
+        reader.onloadend = () => {
+            this.setState({
+                img_file: img_file,
+                img_preview: reader.result
+            });
+        }
+
+        reader.readAsDataURL(img_file);
+
     };
 
     handleQPChange = (event, { name }) => {
@@ -41,10 +57,6 @@ export default class CreatePost extends Component {
     };
 
     handleTagsChange = (event, { value }) => this.setState({ tags: value });
-
-    handlePostRedirect = (id) => {
-        
-    }
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -85,15 +97,41 @@ export default class CreatePost extends Component {
     }
 
   render() {
+
+    // Preview style settings
+    const wrapStyle = {
+      backgroundColor: "#2D2B2D",
+      display: "block",
+      width: "100%",
+      position: "relative",
+      height: "68%",
+      padding: "56.25% 0 0 0",
+      overflow: "hidden"
+    }
+
+    const imgStyle = {
+      position: "absolute",
+      display: "block",
+      maxWidth: "100%",
+      maxHeight: "100%",
+      left: "0",
+      right: "0",
+      top: "0",
+      bottom: "0",
+      margin: "auto"
+    }
+
     return (
         <Grid container stackable doubling columns={2} divided="vertically">
 
             <Grid.Column>
+                <Divider hidden />
                 <Divider horizontal>
                     <Header as="h1">SUBMIT A PHOTO</Header>
                 </Divider>
-                    <Image src="./img/default_placeholder.png" />
-                
+                    <div style={wrapStyle}>
+                        <Image style={imgStyle} src={this.state.img_preview} />
+                    </div>
                 <Form>
                     <Form.Field>
                         <Input icon="camera" iconPosition="left" name="img_file" type="file" onChange={this.handleFileChange} />
