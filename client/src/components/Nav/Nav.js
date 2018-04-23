@@ -31,7 +31,7 @@ export default class Nav extends Component {
     this.setState({
       sessionUser: JSON.parse(sessionStorage.getItem('user'))
     })
-    console.log(this.state.sessionUser);
+    console.log("Session User:", this.state.sessionUser);
   }
 
   handleSessionChange = () => {

@@ -4,14 +4,17 @@ import PostCard from "../components/PostCard";
 import { Link } from 'react-router-dom';
 import API from "../utils/API";
 
+const homeWrapper = {
+  marginTop: "-25px"
+}
+
 const homeBackgroundHero = {
   backgroundImage: "url(img/home-fluid.png)",
   display: 'flex',
   justifyContent: 'center',
   backgroundSize: 'cover',
   height: '100vh',
-  width: '100vw',
-  marginTop: "-15px",
+  width: '100%',
   zIndex: "2",
   alignItems: "center",
   color: "white"
@@ -37,39 +40,40 @@ export default class Home extends Component  {
         API.getPosts()
         .then(res => {
             this.setState({ posts: res.data })
-            console.log(this.state.posts)
         })
         .catch(err => console.log(err));
     };
     
     render () {
  
-        return <Grid stackable>
-              <div fluid style={homeBackgroundHero}>
-            <Segment textAlign="center" basic style={{ marginTop: "330px" }}>
-                    <Header as="h2" inverted style={letterSpace}>CULTURE STACK</Header>
-                    <p className={"secondary-font"}>
-                      Share your photos. Learn and
-                      collaborate. Join the culture today.
-                    </p>
-                  <Button size='big'><Link to="/register">Register</Link></Button>
-                  <Divider hidden style={{flexDirection: "column", alignSelf: "flexEnd"}}><Icon name="angle down" size="big" inverted/> </Divider>
-                </Segment>
-              </div>
+        return (
+          <div style={homeWrapper}>
+            <div style={homeBackgroundHero}>
+              <Segment textAlign="center" basic style={{ marginTop: "330px" }}>
+                  <Header as="h2" inverted style={letterSpace}>CULTURE STACK</Header>
+                  <p className={"secondary-font"}>
+                    Share your photos. Learn and
+                    collaborate. Join the culture today.
+                  </p>
+                <Button size='big'><Link to="/register">Register</Link></Button>
+                <Divider hidden style={{flexDirection: "column", alignSelf: "flexEnd"}}><Icon name="angle down" size="big" inverted/> </Divider>
+              </Segment>
+            </div>
+            <Grid stackable>
               <Grid.Row>
-                  <Grid.Column width={16}>      
-                  <Divider hidden></Divider>            
-                  <Divider hidden></Divider>            
-                  <Divider hidden></Divider>       
-                      <Segment textAlign="center" basic color='teal' inverted padded='very'>
-                        <div className={"secondary-font"}>
-                      
-                          <p>The worlds premeire photo sharing experience.</p>
-                          <p>Share your image and get feedback from the world's top photographers.</p>
-                          <p>Find content from others and learn more about the craft.</p>
-                        </div>
-                      </Segment> 
-                  </Grid.Column>
+                <Grid.Column width={16}>      
+                <Divider hidden></Divider>            
+                <Divider hidden></Divider>            
+                <Divider hidden></Divider>       
+                    <Segment textAlign="center" basic color='teal' inverted padded='very'>
+                      <div className={"secondary-font"}>
+                    
+                        <p>The worlds premeire photo sharing experience.</p>
+                        <p>Share your image and get feedback from the world's top photographers.</p>
+                        <p>Find content from others and learn more about the craft.</p>
+                      </div>
+                    </Segment> 
+                </Grid.Column>
               </Grid.Row>
               <Divider hidden></Divider>
               <Grid.Row>
@@ -132,7 +136,8 @@ export default class Home extends Component  {
                 </Grid.Column>
               </Grid.Row>
             </Grid>
-     
+          </div>
+      )
     }
 }
 

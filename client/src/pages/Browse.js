@@ -75,7 +75,7 @@ export default class Browse extends Component  {
                     <div>
                         <Label.Group color="teal" tag>
                         {tagList.map(tag => (
-                            <Label as="a" name={tag.text} onClick={this.handleTagChange}>#{tag.text}</Label>
+                            <Label as="a" key={tag.key} name={tag.text} onClick={this.handleTagChange}>#{tag.text}</Label>
                         ))}
                         </Label.Group>
                     </div>
