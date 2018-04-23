@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import history from "../history";
-import { Grid, Divider, Header, Image, Form, Input, Radio, Dropdown, TextArea, Button } from 'semantic-ui-react';
+import { Grid, Divider, Header, Image, Form, Input, Dropdown, TextArea, Button } from 'semantic-ui-react';
 
 import { tagOptions } from '../common';
 import API from "../utils/API";
@@ -144,13 +144,13 @@ export default class CreatePost extends Component {
                     <Divider hidden />
                       <Divider horizontal>
                        <Button.Group>
-                                <Button color="gray" name="Question" onClick={this.handleQPChange}>Question</Button>
+                                <Button color="grey" name="Question" onClick={this.handleQPChange}>Question</Button>
                                 <Button.Or />
                                 <Button color="pink" name="Post" onClick={this.handleQPChange}>Post</Button>
                         </Button.Group>
                         </Divider>
                     <Divider horizontal>Photo Details</Divider>
-                    <Form.Group  widths="equal" widths={3}>
+                    <Form.Group widths={3}>
                         <Form.Field control={Input} name="aperture" id="aperture-field" placeholder="Aperture" onChange={this.handleInputChange} />
                         <Form.Field control={Input} name="iso" id="iso-field" placeholder="ISO" onChange={this.handleInputChange} />
                         <Form.Field control={Input} name="speed" id="speed-field" placeholder="Shutter Speed" onChange={this.handleInputChange} />

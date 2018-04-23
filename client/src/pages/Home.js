@@ -1,12 +1,7 @@
-import React, { Component, PropType } from "react";
-import { Grid, Container, Image, Divider, Item, Icon, Button, Segment, Header, Card, Label, List } from "semantic-ui-react";
-import { Tag } from '../components/Tag';
-import UserCard from '../components/PostCard';
-import RegisterModal from '../components/RegisterModal';
-import {tagOptions} from "../common/";
-import SignInModal from '../components/SignInModal';
+import React, { Component } from "react";
+import { Grid, Image, Divider, Icon, Button, Segment, Header, Card } from "semantic-ui-react";
 import PostCard from "../components/PostCard";
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import API from "../utils/API";
 
 const homeBackgroundHero = {
@@ -26,8 +21,6 @@ const letterSpace = {
     letterSpacing: '6px',
     fontWeight: 'bold'
 }
-
-
 
 export default class Home extends Component  {
 
@@ -100,7 +93,7 @@ export default class Home extends Component  {
                   <div className="help-module">
                     <Image src={"/img/branding.png"} size="tiny" className="ui" />
                     <span>
-                      <a href="#">Learn More</a>
+                      <a href="">Learn More</a>
                     </span>
                   </div>
                 </Grid.Column>
@@ -133,7 +126,7 @@ export default class Home extends Component  {
                   <div className={"help-module"}>
                     <Image src={"/img/branding.png"} size="tiny" className="ui" />
                     <span>
-                      <a href="#">Learn More</a>
+                      <a href="">Learn More</a>
                     </span>
                   </div>
                 </Grid.Column>

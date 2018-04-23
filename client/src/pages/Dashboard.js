@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Segment, Grid, Image, Divider, TextArea, Form, List, Icon } from "semantic-ui-react";
+import { Container, Segment, Grid, Image, Divider, List, Icon } from "semantic-ui-react";
 import PostCard from '../components/PostCard';
 
 export default class User extends Component {

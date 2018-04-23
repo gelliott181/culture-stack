@@ -1,7 +1,6 @@
-import React, { Component } from "react";
-import {Link, Redirect} from "react-router-dom";
+import React from "react";
+import {Link} from "react-router-dom";
 import {Comment} from "semantic-ui-react";
-import history from '../../history.js';
     
 export default class PostComment extends React.Component {
   

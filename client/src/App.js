@@ -2,7 +2,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Container } from "semantic-ui-react";
 import { withUser, update } from './services/withUser';
 
 //Pages
@@ -10,7 +9,6 @@ import CreatePost from "./pages/CreatePost";
 import ViewPost from "./pages/ViewPost";
 import Home from "./pages/Home";
 import Nav from "./components/Nav";
-import Footer from "./components/Footer";
 import Browse from "./pages/Browse";
 import Dashboard from "./pages/Dashboard";
 import User from "./pages/User";

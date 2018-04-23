@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Header, Image, Form, Input, Checkbox, Message, Container, Divider } from 'semantic-ui-react'
+import { Button, Form, Message, Container, Divider } from 'semantic-ui-react'
 import axios from 'axios';
 
 export default class UserRegistration extends Component {

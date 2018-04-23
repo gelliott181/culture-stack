@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import {Link, Redirect} from "react-router-dom";
+import {Link} from "react-router-dom";
 import history from '../../history.js';
 import axios from "axios";
-import { Menu, Input, Image, Divider } from 'semantic-ui-react';
+import { Menu, Image } from 'semantic-ui-react';
 import SignInModal from "../SignInModal";
 
 
@@ -28,7 +28,9 @@ export default class Nav extends Component {
   };
   
   componentDidMount = () => {
-    sessionUser: JSON.parse(sessionStorage.getItem('user'));
+    this.setState({
+      sessionUser: JSON.parse(sessionStorage.getItem('user'))
+    })
     console.log(this.state.sessionUser);
   }
 

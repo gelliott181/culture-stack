@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import { Grid, Divider, Header, Image, Form, Input, Radio, Dropdown, TextArea, Button, Comment, Segment, Icon, Statistic, Popup, Container, Message} from 'semantic-ui-react';
-import { tagOptions } from '../common';
+import { Grid, Divider, Header, Image, Form, Button, Comment, Segment, Icon, Message} from 'semantic-ui-react';
 import PostComment from '../components/PostComment';
 import API from "../utils/API";
 
